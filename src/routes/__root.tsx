@@ -1,5 +1,8 @@
-import { createRootRoute, Link, Outlet } from '@tanstack/react-router'
+import { createRootRoute, Outlet } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+import { Sidebar } from '../components/Sidebar/Sidebar'
+import { Header } from '../components/Header/Header'
+import styles from './__root.module.css'
 
 export const Route = createRootRoute({
   component: RootLayout,
@@ -7,20 +10,16 @@ export const Route = createRootRoute({
 
 function RootLayout() {
   return (
-    <div className="app-shell">
-      <header className="app-header">
-        <Link to="/" className="brand">
-          Design System Docs
-        </Link>
-        <nav className="app-nav">
-          <Link to="/" activeOptions={{ exact: true }}>
-            Home
-          </Link>
-          <Link to="/components/button">Button</Link>
-        </nav>
+    <div className={styles.shell}>
+      <header className={styles.header}>
+        <Header />
       </header>
 
-      <main className="app-main">
+      <aside className={styles.sidebar}>
+        <Sidebar />
+      </aside>
+
+      <main className={styles.main}>
         <Outlet />
       </main>
 
