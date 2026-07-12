@@ -10,11 +10,71 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ComponentsTypographyRouteImport } from './routes/components/typography'
+import { Route as ComponentsSwitchRouteImport } from './routes/components/switch'
+import { Route as ComponentsStackRouteImport } from './routes/components/stack'
+import { Route as ComponentsSearchboxRouteImport } from './routes/components/searchbox'
+import { Route as ComponentsLinkRouteImport } from './routes/components/link'
+import { Route as ComponentsInputRouteImport } from './routes/components/input'
+import { Route as ComponentsImageRouteImport } from './routes/components/image'
+import { Route as ComponentsIconRouteImport } from './routes/components/icon'
+import { Route as ComponentsContainerRouteImport } from './routes/components/container'
+import { Route as ComponentsCardRouteImport } from './routes/components/card'
 import { Route as ComponentsButtonRouteImport } from './routes/components/button'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComponentsTypographyRoute = ComponentsTypographyRouteImport.update({
+  id: '/components/typography',
+  path: '/components/typography',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComponentsSwitchRoute = ComponentsSwitchRouteImport.update({
+  id: '/components/switch',
+  path: '/components/switch',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComponentsStackRoute = ComponentsStackRouteImport.update({
+  id: '/components/stack',
+  path: '/components/stack',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComponentsSearchboxRoute = ComponentsSearchboxRouteImport.update({
+  id: '/components/searchbox',
+  path: '/components/searchbox',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComponentsLinkRoute = ComponentsLinkRouteImport.update({
+  id: '/components/link',
+  path: '/components/link',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComponentsInputRoute = ComponentsInputRouteImport.update({
+  id: '/components/input',
+  path: '/components/input',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComponentsImageRoute = ComponentsImageRouteImport.update({
+  id: '/components/image',
+  path: '/components/image',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComponentsIconRoute = ComponentsIconRouteImport.update({
+  id: '/components/icon',
+  path: '/components/icon',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComponentsContainerRoute = ComponentsContainerRouteImport.update({
+  id: '/components/container',
+  path: '/components/container',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComponentsCardRoute = ComponentsCardRouteImport.update({
+  id: '/components/card',
+  path: '/components/card',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ComponentsButtonRoute = ComponentsButtonRouteImport.update({
@@ -26,27 +86,104 @@ const ComponentsButtonRoute = ComponentsButtonRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/components/button': typeof ComponentsButtonRoute
+  '/components/card': typeof ComponentsCardRoute
+  '/components/container': typeof ComponentsContainerRoute
+  '/components/icon': typeof ComponentsIconRoute
+  '/components/image': typeof ComponentsImageRoute
+  '/components/input': typeof ComponentsInputRoute
+  '/components/link': typeof ComponentsLinkRoute
+  '/components/searchbox': typeof ComponentsSearchboxRoute
+  '/components/stack': typeof ComponentsStackRoute
+  '/components/switch': typeof ComponentsSwitchRoute
+  '/components/typography': typeof ComponentsTypographyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/components/button': typeof ComponentsButtonRoute
+  '/components/card': typeof ComponentsCardRoute
+  '/components/container': typeof ComponentsContainerRoute
+  '/components/icon': typeof ComponentsIconRoute
+  '/components/image': typeof ComponentsImageRoute
+  '/components/input': typeof ComponentsInputRoute
+  '/components/link': typeof ComponentsLinkRoute
+  '/components/searchbox': typeof ComponentsSearchboxRoute
+  '/components/stack': typeof ComponentsStackRoute
+  '/components/switch': typeof ComponentsSwitchRoute
+  '/components/typography': typeof ComponentsTypographyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/components/button': typeof ComponentsButtonRoute
+  '/components/card': typeof ComponentsCardRoute
+  '/components/container': typeof ComponentsContainerRoute
+  '/components/icon': typeof ComponentsIconRoute
+  '/components/image': typeof ComponentsImageRoute
+  '/components/input': typeof ComponentsInputRoute
+  '/components/link': typeof ComponentsLinkRoute
+  '/components/searchbox': typeof ComponentsSearchboxRoute
+  '/components/stack': typeof ComponentsStackRoute
+  '/components/switch': typeof ComponentsSwitchRoute
+  '/components/typography': typeof ComponentsTypographyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/components/button'
+  fullPaths:
+    | '/'
+    | '/components/button'
+    | '/components/card'
+    | '/components/container'
+    | '/components/icon'
+    | '/components/image'
+    | '/components/input'
+    | '/components/link'
+    | '/components/searchbox'
+    | '/components/stack'
+    | '/components/switch'
+    | '/components/typography'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/components/button'
-  id: '__root__' | '/' | '/components/button'
+  to:
+    | '/'
+    | '/components/button'
+    | '/components/card'
+    | '/components/container'
+    | '/components/icon'
+    | '/components/image'
+    | '/components/input'
+    | '/components/link'
+    | '/components/searchbox'
+    | '/components/stack'
+    | '/components/switch'
+    | '/components/typography'
+  id:
+    | '__root__'
+    | '/'
+    | '/components/button'
+    | '/components/card'
+    | '/components/container'
+    | '/components/icon'
+    | '/components/image'
+    | '/components/input'
+    | '/components/link'
+    | '/components/searchbox'
+    | '/components/stack'
+    | '/components/switch'
+    | '/components/typography'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ComponentsButtonRoute: typeof ComponentsButtonRoute
+  ComponentsCardRoute: typeof ComponentsCardRoute
+  ComponentsContainerRoute: typeof ComponentsContainerRoute
+  ComponentsIconRoute: typeof ComponentsIconRoute
+  ComponentsImageRoute: typeof ComponentsImageRoute
+  ComponentsInputRoute: typeof ComponentsInputRoute
+  ComponentsLinkRoute: typeof ComponentsLinkRoute
+  ComponentsSearchboxRoute: typeof ComponentsSearchboxRoute
+  ComponentsStackRoute: typeof ComponentsStackRoute
+  ComponentsSwitchRoute: typeof ComponentsSwitchRoute
+  ComponentsTypographyRoute: typeof ComponentsTypographyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -56,6 +193,76 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/components/typography': {
+      id: '/components/typography'
+      path: '/components/typography'
+      fullPath: '/components/typography'
+      preLoaderRoute: typeof ComponentsTypographyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/components/switch': {
+      id: '/components/switch'
+      path: '/components/switch'
+      fullPath: '/components/switch'
+      preLoaderRoute: typeof ComponentsSwitchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/components/stack': {
+      id: '/components/stack'
+      path: '/components/stack'
+      fullPath: '/components/stack'
+      preLoaderRoute: typeof ComponentsStackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/components/searchbox': {
+      id: '/components/searchbox'
+      path: '/components/searchbox'
+      fullPath: '/components/searchbox'
+      preLoaderRoute: typeof ComponentsSearchboxRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/components/link': {
+      id: '/components/link'
+      path: '/components/link'
+      fullPath: '/components/link'
+      preLoaderRoute: typeof ComponentsLinkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/components/input': {
+      id: '/components/input'
+      path: '/components/input'
+      fullPath: '/components/input'
+      preLoaderRoute: typeof ComponentsInputRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/components/image': {
+      id: '/components/image'
+      path: '/components/image'
+      fullPath: '/components/image'
+      preLoaderRoute: typeof ComponentsImageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/components/icon': {
+      id: '/components/icon'
+      path: '/components/icon'
+      fullPath: '/components/icon'
+      preLoaderRoute: typeof ComponentsIconRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/components/container': {
+      id: '/components/container'
+      path: '/components/container'
+      fullPath: '/components/container'
+      preLoaderRoute: typeof ComponentsContainerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/components/card': {
+      id: '/components/card'
+      path: '/components/card'
+      fullPath: '/components/card'
+      preLoaderRoute: typeof ComponentsCardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/components/button': {
@@ -71,6 +278,16 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ComponentsButtonRoute: ComponentsButtonRoute,
+  ComponentsCardRoute: ComponentsCardRoute,
+  ComponentsContainerRoute: ComponentsContainerRoute,
+  ComponentsIconRoute: ComponentsIconRoute,
+  ComponentsImageRoute: ComponentsImageRoute,
+  ComponentsInputRoute: ComponentsInputRoute,
+  ComponentsLinkRoute: ComponentsLinkRoute,
+  ComponentsSearchboxRoute: ComponentsSearchboxRoute,
+  ComponentsStackRoute: ComponentsStackRoute,
+  ComponentsSwitchRoute: ComponentsSwitchRoute,
+  ComponentsTypographyRoute: ComponentsTypographyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
