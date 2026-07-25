@@ -3,6 +3,7 @@ import Typography from '../../components/Typography/Typography'
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Button from '../../components/Button/Button'
 import Container from '../../components/Container/Container'
+import Stack from '../../components/Stack/Stack'
 
 const codeSnippets = {
   primary: `<Button variant="primary">Save</Button>`,
@@ -58,9 +59,11 @@ function ButtonDocs() {
         <Typography variant='code'>sm</Typography>, <Typography variant='code'>md</Typography> (default),
         and <Typography variant='code'>lg</Typography>.
       </Typography>
-      <Button size='sm'>Small</Button>
-      <Button size='md'>Medium</Button>
-      <Button size='lg'>Large</Button>
+      <Stack direction='row' align='center' gap='md'>
+        <Button size='sm'>Small</Button>
+        <Button size='md'>Medium</Button>
+        <Button size='lg'>Large</Button>
+      </Stack>
       <CodeBlock code={codeSnippets.sizes} />
 
       <Typography variant='h2'>Disabled</Typography>

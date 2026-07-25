@@ -4,6 +4,7 @@ import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Icon from '../../components/Icon/Icon'
 import type { IconName } from '../../components/Icon/Icon.types'
 import Container from '../../components/Container/Container'
+import Stack from '../../components/Stack/Stack'
 
 const iconNames: IconName[] = [
   'bluesky',
@@ -43,14 +44,14 @@ function IconDocs() {
         The full set from the sprite. The <Typography variant='code'>name</Typography> prop
         matches each label below.
       </Typography>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem' }}>
+      <Stack direction='row' gap='lg' wrap>
         {iconNames.map((name) => (
-          <div key={name} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+          <Stack key={name} align='center' gap='sm'>
             <Icon name={name} size='lg' label={name} />
             <Typography variant='caption'>{name}</Typography>
-          </div>
+          </Stack>
         ))}
-      </div>
+      </Stack>
       <CodeBlock code={codeSnippets.basic} />
 
       <Typography variant='h2'>Sizes</Typography>
@@ -60,11 +61,11 @@ function IconDocs() {
         <Typography variant='code'>sm</Typography>, <Typography variant='code'>md</Typography> (default),
         and <Typography variant='code'>lg</Typography>.
       </Typography>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+      <Stack direction='row' align='center' gap='md'>
         <Icon name='github' size='sm' label='GitHub small' />
         <Icon name='github' size='md' label='GitHub medium' />
         <Icon name='github' size='lg' label='GitHub large' />
-      </div>
+      </Stack>
       <CodeBlock code={codeSnippets.sizes} />
 
       <Typography variant='h2'>Accessibility</Typography>

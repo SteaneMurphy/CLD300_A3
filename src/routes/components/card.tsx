@@ -4,6 +4,7 @@ import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Card from '../../components/Card/Card'
 import Button from '../../components/Button/Button'
 import Container from '../../components/Container/Container'
+import Stack from '../../components/Stack/Stack'
 
 const codeSnippets = {
   outlined: `<Card variant="outlined">
@@ -83,9 +84,11 @@ function CardDocs() {
         <Typography variant='code'>sm</Typography>, <Typography variant='code'>md</Typography> (default),
         and <Typography variant='code'>lg</Typography>.
       </Typography>
-      <Card padding='sm'>Compact</Card>
-      <Card padding='md'>Default</Card>
-      <Card padding='lg'>Roomy</Card>
+      <Stack gap='md'>
+        <Card padding='sm'>Compact</Card>
+        <Card padding='md'>Default</Card>
+        <Card padding='lg'>Roomy</Card>
+      </Stack>
       <CodeBlock code={codeSnippets.padding} />
     </Container>
   )
