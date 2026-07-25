@@ -1,3 +1,5 @@
+import type { IconName } from '../Icon/Icon.types'
+
 interface LinkBase
 {
     destination: string,
@@ -6,15 +8,13 @@ interface LinkBase
 
 interface LinkWithIcon extends LinkBase
 {
-    icon: true,
-    iconPath: string,
+    icon: IconName,
     iconOnly?: boolean,
 }
 
 interface LinkTextOnly extends LinkBase
 {
-    icon?: false,
-    iconPath?: never,
+    icon?: never,
     iconOnly?: never,
 }
 

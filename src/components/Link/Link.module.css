@@ -13,9 +13,3 @@
 .link:focus-visible {
   text-decoration: underline;
 }
-
-.icon {
-  width: 1em;
-  height: 1em;
-  flex: 0 0 auto;
-}

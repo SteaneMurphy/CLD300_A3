@@ -8,17 +8,15 @@ const codeSnippets = {
   linkText="View Button"
 />`,
   iconOnly: `<Link
-  icon
-  iconPath="/favicon.svg"
+  icon="github"
   iconOnly
   destination="/components/button"
-  linkText="Home"
+  linkText="View source"
 />`,
   iconText: `<Link
-  icon
-  iconPath="/favicon.svg"
+  icon="github"
   destination="/components/button"
-  linkText="Home"
+  linkText="View source"
 />`,
 }
 
@@ -46,8 +44,7 @@ function LinkDocs() {
 
       <Typography variant='h2'>Link — Icon Only</Typography>
       <Typography variant='body'>
-        Set icon, supply an iconPath,
-        and add iconOnly to hide the label. The
+        Set icon to a sprite name and add iconOnly to hide the label. The
         text is still required, it becomes the accessible name via aria-label,
         so screen-reader users know where the link goes.
       </Typography>
@@ -55,8 +52,7 @@ function LinkDocs() {
 
       <Typography variant='h2'>Link — Icon + Text</Typography>
       <Typography variant='body'>
-        Set icon and iconPath while
-        leaving iconOnly off. The icon renders
+        Set icon to a sprite name and leave iconOnly off. The icon renders
         before the label, useful for navigation and call-to-action links.
       </Typography>
       <CodeBlock code={codeSnippets.iconText} />
