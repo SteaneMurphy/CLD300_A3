@@ -1,0 +1,27 @@
+.image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Object fit — applies when width and/or height constrain the box */
+.cover {
+  object-fit: cover;
+}
+
+.contain {
+  object-fit: contain;
+}
+
+/* Corner radius */
+.none {
+  border-radius: 0;
+}
+
+.md {
+  border-radius: 8px;
+}
+
+.full {
+  border-radius: 50%;
+}
