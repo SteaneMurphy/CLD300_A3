@@ -5,8 +5,7 @@ export type TypographyVariant =
   | 'h2'
   | 'h3'
   | 'body'
-  | 'p1'
-  | 'p2'
+  | 'caption'
   | 'code'
 
 export interface TypographyFormat
