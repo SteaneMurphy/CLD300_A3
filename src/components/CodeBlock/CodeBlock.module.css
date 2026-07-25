@@ -1,5 +1,6 @@
 .block {
   margin: 0;
+  min-width: 0; /* allow shrinking inside a flex column so overflow scrolls here */
   padding: 1rem 1.25rem;
   border: 1px solid var(--border);
   border-radius: 8px;

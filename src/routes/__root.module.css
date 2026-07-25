@@ -18,4 +18,6 @@
 
 .main {
   grid-area: main;
+  min-width: 0; /* let the 1fr column shrink so wide content scrolls internally */
+  padding: 2rem;
 }
