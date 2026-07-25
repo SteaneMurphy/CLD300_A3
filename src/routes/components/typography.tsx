@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import Typography from '../../components/Typography/Typography'
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
+import Container from '../../components/Container/Container'
 
 const codeSnippets = {
   h1: `<Typography variant="h1">Heading 1</Typography>`,
@@ -17,7 +18,7 @@ export const Route = createFileRoute('/components/typography')({
 
 function TypographyDocs() {
   return (
-    <section className="page">
+    <Container size="md">
       <Typography variant='h1'>Typography</Typography>
       <Typography variant='body'>
         Typography renders text at a consistent scale. Pass a <Typography variant='code'>variant</Typography> to
@@ -75,6 +76,6 @@ function TypographyDocs() {
       </Typography>
       <Typography variant='code'>const value = 42</Typography>
       <CodeBlock code={codeSnippets.code} />
-    </section>
+    </Container>
   )
 }

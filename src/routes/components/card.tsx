@@ -3,6 +3,7 @@ import Typography from '../../components/Typography/Typography'
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Card from '../../components/Card/Card'
 import Button from '../../components/Button/Button'
+import Container from '../../components/Container/Container'
 
 const codeSnippets = {
   outlined: `<Card variant="outlined">
@@ -29,7 +30,7 @@ export const Route = createFileRoute('/components/card')({
 
 function CardDocs() {
   return (
-    <section className="page">
+    <Container size="md">
       <Typography variant='h1'>Card</Typography>
       <Typography variant='body'>
         Card is a surface for grouping related content. It renders whatever
@@ -86,6 +87,6 @@ function CardDocs() {
       <Card padding='md'>Default</Card>
       <Card padding='lg'>Roomy</Card>
       <CodeBlock code={codeSnippets.padding} />
-    </section>
+    </Container>
   )
 }

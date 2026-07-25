@@ -3,6 +3,7 @@ import Typography from '../../components/Typography/Typography'
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Icon from '../../components/Icon/Icon'
 import type { IconName } from '../../components/Icon/Icon.types'
+import Container from '../../components/Container/Container'
 
 const iconNames: IconName[] = [
   'bluesky',
@@ -27,7 +28,7 @@ export const Route = createFileRoute('/components/icon')({
 
 function IconDocs() {
   return (
-    <section className="page">
+    <Container size="md">
       <Typography variant='h1'>Icon</Typography>
       <Typography variant='body'>
         Icon renders a symbol from the shared sprite. Pass
@@ -76,6 +77,6 @@ function IconDocs() {
       </Typography>
       <Icon name='github' label='GitHub' size='lg' />
       <CodeBlock code={codeSnippets.label} />
-    </section>
+    </Container>
   )
 }
