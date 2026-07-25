@@ -21,6 +21,18 @@ body {
 }
 
 /* --------------------------------------------------------------------------
+   Page layout
+   Shared wrapper for every route rendered through the root <Outlet />.
+   Applied via `className="page"` on each route's top-level element.
+   -------------------------------------------------------------------------- */
+.page {
+  display: flex;
+  flex-direction: column;
+  max-width: 120ch;
+  margin-inline: auto;
+}
+
+/* --------------------------------------------------------------------------
    Design Tokens
    -------------------------------------------------------------------------- */
 :root {
