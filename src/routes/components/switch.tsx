@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+import Container from '../../components/Container/Container'
 
 export const Route = createFileRoute('/components/switch')({
   component: SwitchDocs,
@@ -6,9 +7,9 @@ export const Route = createFileRoute('/components/switch')({
 
 function SwitchDocs() {
   return (
-    <section className="page">
+    <Container size="md">
       <h1>Switch</h1>
       <p>Placeholder page — component examples and variants go here.</p>
-    </section>
+    </Container>
   )
 }

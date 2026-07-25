@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
+import Container from '../components/Container/Container'
 
 export const Route = createFileRoute('/')({
   component: Home,
@@ -6,7 +7,7 @@ export const Route = createFileRoute('/')({
 
 function Home() {
   return (
-    <section className="page">
+    <Container size="md">
       <h1>Design System Docs</h1>
       <p>
         Documentation for the custom React component library, with live
@@ -15,6 +16,6 @@ function Home() {
       <p>
         Start with the <Link to="/components/button">Button</Link> component.
       </p>
-    </section>
+    </Container>
   )
 }

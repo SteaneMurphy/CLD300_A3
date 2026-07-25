@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import Typography from '../../components/Typography/Typography'
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
+import Container from '../../components/Container/Container'
 
 const codeSnippets = {
   textOnly: `<Link
@@ -26,7 +27,7 @@ export const Route = createFileRoute('/components/link')({
 
 function LinkDocs() {
   return (
-    <section className="page">
+    <Container size="md">
       <Typography variant='h1'>Link</Typography>
       <Typography variant='body'>
         Links allow a user to navigate to another page, either internally within
@@ -56,6 +57,6 @@ function LinkDocs() {
         before the label, useful for navigation and call-to-action links.
       </Typography>
       <CodeBlock code={codeSnippets.iconText} />
-    </section>
+    </Container>
   )
 }

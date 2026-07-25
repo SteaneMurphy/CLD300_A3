@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+import Container from '../../components/Container/Container'
 
 export const Route = createFileRoute('/components/stack')({
   component: StackDocs,
@@ -6,9 +7,9 @@ export const Route = createFileRoute('/components/stack')({
 
 function StackDocs() {
   return (
-    <section className="page">
+    <Container size="md">
       <h1>Stack</h1>
       <p>Placeholder page — component examples and variants go here.</p>
-    </section>
+    </Container>
   )
 }

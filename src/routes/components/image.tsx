@@ -3,6 +3,7 @@ import Typography from '../../components/Typography/Typography'
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Image from '../../components/Image/Image'
 import heroImage from '../../assets/hero.png'
+import Container from '../../components/Container/Container'
 
 const codeSnippets = {
   basic: `<Image src="/hero.png" alt="A short description" />`,
@@ -18,7 +19,7 @@ export const Route = createFileRoute('/components/image')({
 
 function ImageDocs() {
   return (
-    <section className="page">
+    <Container size="md">
       <Typography variant='h1'>Image</Typography>
       <Typography variant='body'>
         Image renders an <Typography variant='code'>img</Typography> with sensible
@@ -65,6 +66,6 @@ function ImageDocs() {
         <Image src={heroImage} alt='' radius='full' fit='cover' width={100} height={100} />
       </div>
       <CodeBlock code={codeSnippets.radius} />
-    </section>
+    </Container>
   )
 }

@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+  margin-inline: auto;
+}
+
+/* Max-width sizes */
+.sm {
+  max-width: 640px;
+}
+
+.md {
+  max-width: 960px;
+}
+
+.lg {
+  max-width: 1200px;
+}
+
+.full {
+  max-width: none;
+}

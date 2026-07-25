@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import Typography from '../../components/Typography/Typography'
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Button from '../../components/Button/Button'
+import Container from '../../components/Container/Container'
 
 const codeSnippets = {
   primary: `<Button variant="primary">Save</Button>`,
@@ -19,7 +20,7 @@ export const Route = createFileRoute('/components/button')({
 
 function ButtonDocs() {
   return (
-    <section className="page">
+    <Container size="md">
       <Typography variant='h1'>Button</Typography>
       <Typography variant='body'>
         Buttons trigger an action. Pass a <Typography variant='code'>variant</Typography> to
@@ -69,6 +70,6 @@ function ButtonDocs() {
       </Typography>
       <Button disabled>Unavailable</Button>
       <CodeBlock code={codeSnippets.disabled} />
-    </section>
+    </Container>
   )
 }
