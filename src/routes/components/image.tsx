@@ -4,6 +4,7 @@ import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Image from '../../components/Image/Image'
 import heroImage from '../../assets/hero.png'
 import Container from '../../components/Container/Container'
+import Stack from '../../components/Stack/Stack'
 
 const codeSnippets = {
   basic: `<Image src="/hero.png" alt="A short description" />`,
@@ -47,10 +48,10 @@ function ImageDocs() {
         crops to fill, <Typography variant='code'>contain</Typography> fits the
         whole image inside.
       </Typography>
-      <div style={{ display: 'flex', gap: '1rem' }}>
+      <Stack direction='row' gap='md'>
         <Image src={heroImage} alt='' fit='cover' width={160} height={100} />
         <Image src={heroImage} alt='' fit='contain' width={160} height={100} />
-      </div>
+      </Stack>
       <CodeBlock code={codeSnippets.fit} />
 
       <Typography variant='h2'>Radius</Typography>
@@ -61,10 +62,10 @@ function ImageDocs() {
         <Typography variant='code'>full</Typography> for a circle (pair with a
         square width and height).
       </Typography>
-      <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+      <Stack direction='row' gap='md' align='center'>
         <Image src={heroImage} alt='' radius='md' width={160} />
         <Image src={heroImage} alt='' radius='full' fit='cover' width={100} height={100} />
-      </div>
+      </Stack>
       <CodeBlock code={codeSnippets.radius} />
     </Container>
   )
