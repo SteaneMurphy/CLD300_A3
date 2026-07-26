@@ -1,3 +1,5 @@
+// Type definitions for the Button component props, variants, and sizes.
+
 import type { ReactNode } from "react";
 
 export type ButtonVariant =

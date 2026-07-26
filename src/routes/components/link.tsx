@@ -1,3 +1,5 @@
+// Documentation route for the Link component. Shows internal, external, and icon links.
+
 import { createFileRoute } from '@tanstack/react-router'
 import Typography from '../../components/Typography/Typography'
 import Example from '../../components/Example/Example'

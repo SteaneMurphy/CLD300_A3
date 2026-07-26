@@ -1,3 +1,5 @@
+/* Styles for the Card component: base rules plus variant and padding classes. */
+
 .card {
   display: flex;
   flex-direction: column;

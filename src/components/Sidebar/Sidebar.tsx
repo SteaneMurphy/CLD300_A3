@@ -1,3 +1,5 @@
+// Sidebar navigation. Lists a link to every component documentation page.
+
 import { Link } from '../Link/Link'
 import type { SidebarLink } from './Sidebar.types'
 import styles from './Sidebar.module.css'

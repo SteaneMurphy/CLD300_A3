@@ -1,3 +1,5 @@
+/* Styles for the Image component: base rules plus fit and radius classes. */
+
 .image {
   display: block;
   max-width: 100%;

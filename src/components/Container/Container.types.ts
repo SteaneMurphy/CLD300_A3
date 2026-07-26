@@ -1,3 +1,5 @@
+// Type definitions for the Container component props, sizes, gradients, and padding.
+
 import type { ReactNode } from "react";
 
 export type ContainerSize =

@@ -1,3 +1,5 @@
+// Example component. Pairs a live component preview with the code that produces it.
+
 import CodeBlock from "../CodeBlock/CodeBlock"
 import type { ExampleFormat } from "./Example.types"
 import styles from "./Example.module.css"

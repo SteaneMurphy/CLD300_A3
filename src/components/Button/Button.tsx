@@ -1,3 +1,5 @@
+// Button component. Renders a button element styled by the variant and size props.
+
 import type { ButtonFormat } from "./Button.types"
 import styles from "./Button.module.css"
 

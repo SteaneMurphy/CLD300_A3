@@ -1,3 +1,5 @@
+// CodeBlock component. Renders a syntax-highlighted code sample using Prism.
+
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx'
 import tsx from 'react-syntax-highlighter/dist/esm/languages/prism/tsx'

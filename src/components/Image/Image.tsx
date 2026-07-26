@@ -1,3 +1,5 @@
+// Image component. Renders a responsive, lazy-loaded img with required alt text.
+
 import type { ImageFormat } from "./Image.types"
 import styles from "./Image.module.css"
 

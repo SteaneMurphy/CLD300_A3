@@ -1,3 +1,5 @@
+// Card component. A surface that groups related content, styled by the variant and padding props.
+
 import type { CardFormat } from "./Card.types"
 import styles from "./Card.module.css"
 

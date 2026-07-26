@@ -1,3 +1,5 @@
+// Type definitions for the Icon component props, icon names, and sizes.
+
 export type IconName =
   | 'bluesky'
   | 'discord'
@@ -13,9 +15,7 @@ export type IconSize =
 
 export interface IconFormat
 {
-    /** Path to the icon, including any sprite fragment, e.g. "/icons.svg#github-icon". */
     src: string,
     size?: IconSize,
-    /** Accessible name. Omit for decorative icons (they are hidden from assistive tech). */
     label?: string,
 }

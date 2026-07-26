@@ -1,3 +1,5 @@
+// Type definitions for the Link component props. The union prevents icon options being passed without an icon.
+
 import type { IconName, IconSize } from '../Icon/Icon.types'
 
 interface LinkBase

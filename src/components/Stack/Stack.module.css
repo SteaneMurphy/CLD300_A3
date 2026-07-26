@@ -1,3 +1,5 @@
+/* Styles for the Stack component, selected by the data attributes it sets. */
+
 .stack {
   display: flex;
 }

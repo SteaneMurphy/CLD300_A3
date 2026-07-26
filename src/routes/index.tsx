@@ -1,3 +1,5 @@
+// Home route. Landing page for the documentation site.
+
 import { createFileRoute, Link } from '@tanstack/react-router'
 import Container from '../components/Container/Container'
 

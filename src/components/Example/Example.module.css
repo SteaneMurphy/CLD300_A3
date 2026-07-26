@@ -1,3 +1,5 @@
+/* Styles for the Example component: the preview panel and its border with the code block. */
+
 .example {
   margin: var(--space-md) 0;
 }

@@ -1,3 +1,5 @@
+// Application entry point. Creates the router from the generated route tree and mounts it to the DOM.
+
 import { createRoot } from 'react-dom/client'
 import { createRouter, RouterProvider } from '@tanstack/react-router'
 import { routeTree } from './routeTree.gen'

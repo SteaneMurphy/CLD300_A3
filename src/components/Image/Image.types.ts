@@ -1,3 +1,5 @@
+// Type definitions for the Image component props, fit modes, and corner radii.
+
 export type ImageFit =
   | 'cover'
   | 'contain'

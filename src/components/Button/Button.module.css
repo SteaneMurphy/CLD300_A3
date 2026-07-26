@@ -1,3 +1,5 @@
+/* Styles for the Button component: base rules plus variant and size classes. */
+
 .button {
   display: inline-flex;
   align-items: center;

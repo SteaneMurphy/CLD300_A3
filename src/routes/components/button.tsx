@@ -1,3 +1,5 @@
+// Documentation route for the Button component. Shows each variant, size, disabled, and onClick example.
+
 import { useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
 import Typography from '../../components/Typography/Typography'

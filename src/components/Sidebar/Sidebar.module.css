@@ -1,3 +1,5 @@
+/* Styles for the sidebar navigation, including the active link state. */
+
 .nav {
   display: flex;
   flex-direction: column;

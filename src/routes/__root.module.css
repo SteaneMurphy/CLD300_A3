@@ -1,3 +1,5 @@
+/* Layout styles for the app shell grid: header, sidebar, and main regions. */
+
 .shell {
   display: grid;
   grid-template-columns: 240px 1fr;

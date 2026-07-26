@@ -1,3 +1,5 @@
+// Root route. Defines the app shell layout of header, sidebar, and main content outlet.
+
 import { createRootRoute, Outlet } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import { Sidebar } from '../components/Sidebar/Sidebar.tsx'

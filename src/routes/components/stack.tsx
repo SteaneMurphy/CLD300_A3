@@ -1,3 +1,5 @@
+// Documentation route for the Stack component. Shows direction, gap, alignment, and wrapping.
+
 import { createFileRoute } from '@tanstack/react-router'
 import Container from '../../components/Container/Container'
 import Stack from '../../components/Stack/Stack'

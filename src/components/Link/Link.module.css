@@ -1,3 +1,5 @@
+/* Styles for the Link component: base rules plus the hover background and full width modifiers. */
+
 .link {
   display: inline-flex;
   align-items: center;

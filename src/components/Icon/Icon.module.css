@@ -1,3 +1,5 @@
+/* Styles for the Icon component: base rules plus size classes. */
+
 .icon {
   display: inline-block;
   flex: 0 0 auto;

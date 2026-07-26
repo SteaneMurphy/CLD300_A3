@@ -1,3 +1,5 @@
+// Type definitions for the Typography component props and variants.
+
 import type { ReactNode } from "react";
 
 export type TypographyVariant =

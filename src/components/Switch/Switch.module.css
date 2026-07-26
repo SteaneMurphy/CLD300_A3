@@ -1,3 +1,5 @@
+/* Styles for the Switch component: the track, the knob, and each variant. */
+
 .switch {
   --track-w: 2.75rem;
   --track-h: 1.5rem;

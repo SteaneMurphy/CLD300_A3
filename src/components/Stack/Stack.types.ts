@@ -1,3 +1,5 @@
+// Type definitions for the Stack component props: direction, gap, alignment, and wrapping.
+
 import type { ReactNode } from "react";
 
 export type StackDirection =

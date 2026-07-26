@@ -1,3 +1,5 @@
+// Documentation route for the SearchBox component. Placeholder until the component is built.
+
 import { createFileRoute } from '@tanstack/react-router'
 import Typography from '../../components/Typography/Typography'
 import Container from '../../components/Container/Container'

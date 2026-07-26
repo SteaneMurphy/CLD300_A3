@@ -1,3 +1,5 @@
+// Documentation route for the Image component. Shows the fit and radius options.
+
 import { createFileRoute } from '@tanstack/react-router'
 import Typography from '../../components/Typography/Typography'
 import Example from '../../components/Example/Example'

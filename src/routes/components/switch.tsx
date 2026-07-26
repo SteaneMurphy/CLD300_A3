@@ -1,3 +1,5 @@
+// Documentation route for the Switch component. Shows each variant and the disabled state.
+
 import { createFileRoute } from '@tanstack/react-router'
 import Typography from '../../components/Typography/Typography'
 import Example from '../../components/Example/Example'

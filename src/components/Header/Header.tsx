@@ -1,3 +1,5 @@
+// Site header. Holds the home link, the dark mode toggle, and the repository link.
+
 import { useEffect, useState } from "react";
 import Container from "../Container/Container";
 import Link from "../Link/Link";

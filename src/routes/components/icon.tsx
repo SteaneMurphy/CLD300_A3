@@ -1,3 +1,5 @@
+// Documentation route for the Icon component. Shows every icon in the sprite at each size.
+
 import { createFileRoute } from '@tanstack/react-router'
 import Typography from '../../components/Typography/Typography'
 import Example from '../../components/Example/Example'

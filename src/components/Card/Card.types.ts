@@ -1,3 +1,5 @@
+// Type definitions for the Card component props, variants, and padding sizes.
+
 import type { ReactNode } from "react";
 
 export type CardVariant =

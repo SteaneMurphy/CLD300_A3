@@ -1,3 +1,5 @@
+// Stack component. Lays out its children in a row or column with a consistent gap.
+
 import type { StackFormat } from "./Stack.types"
 import styles from "./Stack.module.css"
 

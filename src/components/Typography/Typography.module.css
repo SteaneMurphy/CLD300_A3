@@ -1,3 +1,5 @@
+/* Styles for the Typography component: one class per variant. */
+
 .display {
   font-family: var(--font-sans);
   font-size: var(--font-size-5xl);

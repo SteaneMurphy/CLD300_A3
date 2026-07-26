@@ -1,11 +1,19 @@
+// Link component. Renders a router link for internal paths and a plain anchor for external URLs.
+
 import { Link as RouterLink } from '@tanstack/react-router'
 import styles from './Link.module.css'
 import type { LinkFormat } from './Link.types'
 import Icon from '../Icon/Icon'
 
+// regex is used to determine if the link destination attribute passed in is external or internal.
+// checks on "https:/"
 export function Link({ icon, iconOnly, iconSize = 'sm', linkText, destination, hoverBackground, fillWidth }: LinkFormat) {
   const isExternal = /^https?:\/\//.test(destination)
 
+  // .filter(Boolean) filters out the boolean conditions sent into the className attribute. Falsey
+  // boolean conditions are dropped so that only truthy conditions remain.
+  // .join(' ') then combines the remaining class names into the single
+  // space-separated string that className expects 
   const className = [
     styles.link,
     hoverBackground && styles.hoverBackground,
@@ -14,6 +22,7 @@ export function Link({ icon, iconOnly, iconSize = 'sm', linkText, destination, h
     .filter(Boolean)
     .join(' ')
 
+  // content is created based on conditional rendering and passed to the final return
   const content = (
     <>
       {icon && <Icon src={`/icons.svg#${icon}-icon`} size={iconSize} />}
@@ -21,6 +30,7 @@ export function Link({ icon, iconOnly, iconSize = 'sm', linkText, destination, h
     </>
   )
 
+  // if external, generate an <a> tag element otherwise generate an <RouterLink> element
   if (isExternal) {
     return (
       <a

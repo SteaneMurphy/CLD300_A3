@@ -1,3 +1,5 @@
+// Icon component. Renders an SVG from the icon sprite, hidden from assistive technology unless given a label.
+
 import type { IconFormat } from "./Icon.types"
 import styles from "./Icon.module.css"
 
