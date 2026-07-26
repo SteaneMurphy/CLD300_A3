@@ -16,7 +16,7 @@ export function Link({ icon, iconOnly, iconSize = 'sm', linkText, destination, h
 
   const content = (
     <>
-      {icon && <Icon name={icon} size={iconSize} />}
+      {icon && <Icon src={`/icons.svg#${icon}-icon`} size={iconSize} />}
       {!iconOnly && <span>{linkText}</span>}
     </>
   )

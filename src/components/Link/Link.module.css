@@ -4,24 +4,16 @@
   gap: 0.5rem;
   font-family: var(--font-sans);
   font-size: var(--font-size-md);
-  /* line-height: var(--line-height-normal); */
   color: var(--text-body);
   text-decoration: none;
   margin: 0 0.5rem;
 }
 
-/* .link:hover,
-.link:focus-visible {
-  text-decoration: underline;
-} */
-
-/* Opt-in: stretch to fill the container's width */
 .fillWidth {
   display: flex;
   width: 100%;
 }
 
-/* Opt-in hover background variant */
 .hoverBackground {
   padding: var(--space-2xs) var(--space-xs);
   border-radius: 4px;

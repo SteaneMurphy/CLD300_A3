@@ -13,7 +13,8 @@ export type IconSize =
 
 export interface IconFormat
 {
-    name: IconName,
+    /** Path to the icon, including any sprite fragment, e.g. "/icons.svg#github-icon". */
+    src: string,
     size?: IconSize,
     /** Accessible name. Omit for decorative icons (they are hidden from assistive tech). */
     label?: string,

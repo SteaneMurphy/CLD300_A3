@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import Typography from '../../components/Typography/Typography'
-import CodeBlock from '../../components/CodeBlock/CodeBlock'
+import Example from '../../components/Example/Example'
 import Icon from '../../components/Icon/Icon'
 import type { IconName } from '../../components/Icon/Icon.types'
 import Container from '../../components/Container/Container'
@@ -16,11 +16,11 @@ const iconNames: IconName[] = [
 ]
 
 const codeSnippets = {
-  basic: `<Icon name="github" />`,
-  sizes: `<Icon name="github" size="sm" />
-<Icon name="github" size="md" />
-<Icon name="github" size="lg" />`,
-  label: `<Icon name="github" label="GitHub" />`,
+  basic: `<Icon src="/icons.svg#github-icon" />`,
+  sizes: `<Icon src="/icons.svg#github-icon" size="sm" />
+<Icon src="/icons.svg#github-icon" size="md" />
+<Icon src="/icons.svg#github-icon" size="lg" />`,
+  label: `<Icon src="/icons.svg#github-icon" label="GitHub" />`,
 }
 
 export const Route = createFileRoute('/components/icon')({
@@ -32,52 +32,48 @@ function IconDocs() {
     <Container size="md">
       <Typography variant='h1'>Icon</Typography>
       <Typography variant='body'>
-        Icon renders a symbol from the shared sprite. Pass
-        a <Typography variant='code'>name</Typography> to choose the
-        glyph, the type only accepts names that exist in the sprite, so a
-        typo is a compile error. Use
-        the <Typography variant='code'>size</Typography> prop to scale it.
+        Icon renders a symbol from an SVG sprite. Pass a src that points at the
+        icon, including the sprite fragment (for example
+        /icons.svg#github-icon). Use the size prop to scale it.
       </Typography>
 
       <Typography variant='h2'>Available icons</Typography>
       <Typography variant='body'>
-        The full set from the sprite. The <Typography variant='code'>name</Typography> prop
-        matches each label below.
+        The full set from the sprite. Each src is /icons.svg# followed by the
+        label below and -icon.
       </Typography>
-      <Stack direction='row' gap='lg' wrap>
-        {iconNames.map((name) => (
-          <Stack key={name} align='center' gap='sm'>
-            <Icon name={name} size='lg' label={name} />
-            <Typography variant='caption'>{name}</Typography>
-          </Stack>
-        ))}
-      </Stack>
-      <CodeBlock code={codeSnippets.basic} />
+      <Example code={codeSnippets.basic}>
+        <Stack direction='row' gap='lg' wrap>
+          {iconNames.map((name) => (
+            <Stack key={name} align='center' gap='sm'>
+              <Icon src={`/icons.svg#${name}-icon`} size='lg' label={name} />
+              <Typography variant='caption'>{name}</Typography>
+            </Stack>
+          ))}
+        </Stack>
+      </Example>
 
       <Typography variant='h2'>Sizes</Typography>
       <Typography variant='body'>
-        Three sizes are available via
-        the <Typography variant='code'>size</Typography> prop:{' '}
-        <Typography variant='code'>sm</Typography>, <Typography variant='code'>md</Typography> (default),
-        and <Typography variant='code'>lg</Typography>.
+        Three sizes are available via the size prop: sm, md (default), and lg.
       </Typography>
-      <Stack direction='row' align='center' gap='md'>
-        <Icon name='github' size='sm' label='GitHub small' />
-        <Icon name='github' size='md' label='GitHub medium' />
-        <Icon name='github' size='lg' label='GitHub large' />
-      </Stack>
-      <CodeBlock code={codeSnippets.sizes} />
+      <Example code={codeSnippets.sizes}>
+        <Stack direction='row' align='center' gap='md'>
+          <Icon src='/icons.svg#github-icon' size='sm' label='GitHub small' />
+          <Icon src='/icons.svg#github-icon' size='md' label='GitHub medium' />
+          <Icon src='/icons.svg#github-icon' size='lg' label='GitHub large' />
+        </Stack>
+      </Example>
 
       <Typography variant='h2'>Accessibility</Typography>
       <Typography variant='body'>
         An icon is decorative by default and hidden from assistive tech. When
-        the icon carries meaning on its own, pass
-        a <Typography variant='code'>label</Typography> — it becomes the
-        accessible name via <Typography variant='code'>role="img"</Typography> and{' '}
-        <Typography variant='code'>aria-label</Typography>.
+        the icon carries meaning on its own, pass a label, and it becomes the
+        accessible name via role="img" and aria-label.
       </Typography>
-      <Icon name='github' label='GitHub' size='lg' />
-      <CodeBlock code={codeSnippets.label} />
+      <Example code={codeSnippets.label}>
+        <Icon src='/icons.svg#github-icon' label='GitHub' size='lg' />
+      </Example>
     </Container>
   )
 }

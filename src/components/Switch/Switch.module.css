@@ -1,0 +1,96 @@
+.switch {
+  --track-w: 2.75rem;
+  --track-h: 1.5rem;
+  --knob: 1.125rem;
+  --pad: 0.1875rem;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  width: var(--track-w);
+  height: var(--track-h);
+  padding: 0;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.switch:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.switch:hover:not(:disabled) {
+  filter: brightness(0.97);
+}
+
+.switch:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.knob {
+  position: absolute;
+  top: 50%;
+  left: var(--pad);
+  width: var(--knob);
+  height: var(--knob);
+  transform: translateY(-50%);
+  background: var(--surface-raised);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: left 0.15s ease, background-color 0.15s ease;
+}
+
+.switch[data-on] .knob {
+  left: calc(100% - var(--knob) - var(--pad));
+}
+
+/* Standard: pill track, circular knob, coloured on/off background */
+.standard {
+  background: var(--border);
+  border-radius: 999px;
+}
+
+.standard[data-on] {
+  background: var(--accent);
+}
+
+.standard .knob {
+  border-radius: 50%;
+}
+
+/* Ghost: no track fill, on/off shown by the knob colour and border */
+.ghost {
+  background: transparent;
+  border-color: var(--border);
+  border-radius: 999px;
+}
+
+.ghost[data-on] {
+  border-color: var(--accent);
+}
+
+.ghost .knob {
+  background: var(--text-muted);
+  border-radius: 50%;
+  box-shadow: none;
+}
+
+.ghost[data-on] .knob {
+  background: var(--accent);
+}
+
+/* Square: square track and knob, coloured on/off background */
+.square {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.square[data-on] {
+  background: var(--accent);
+}
+
+.square .knob {
+  border-radius: 2px;
+}

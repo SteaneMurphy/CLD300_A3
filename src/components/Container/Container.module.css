@@ -3,7 +3,6 @@
   margin-inline: auto;
 }
 
-/* Max-width sizes */
 .sm {
   max-width: 640px;
 }
@@ -20,7 +19,6 @@
   max-width: none;
 }
 
-/* Internal padding — keeps content inset so backgrounds stay edge-to-edge */
 .padding-sm {
   padding: var(--space-sm);
 }
@@ -33,7 +31,6 @@
   padding: var(--space-lg);
 }
 
-/* Gradient backgrounds — consume the directional gradient tokens */
 .gradient-top {
   background: var(--gradient-top);
 }

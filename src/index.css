@@ -1,12 +1,3 @@
-/* ==========================================================================
-   Design System — Global Foundation
-   Tokens, reset, and base element styles live here. Component-specific styles
-   belong in co-located *.module.css files that consume these tokens.
-   ========================================================================== */
-
-/* --------------------------------------------------------------------------
-   Reset
-   -------------------------------------------------------------------------- */
 *,
 *::before,
 *::after {
@@ -25,13 +16,9 @@ a {
   text-decoration: none;
 }
 
-/* --------------------------------------------------------------------------
-   Design Tokens
-   -------------------------------------------------------------------------- */
 :root {
   color-scheme: light dark;
 
-  /* Color — MUI default light palette (grey scale + primary #1976d2) */
   --text-heading: #212121;
   --text-body: #424242;
   --text-muted: #757575;
@@ -42,28 +29,26 @@ a {
   --accent: #1976d2;
   --accent-contrast: #ffffff;
 
-  /* Spacing — MUI 8px base scale */
-  --space-3xs: 0.25rem; /* 4px  */
-  --space-2xs: 0.5rem; /* 8px  */
-  --space-xs: 0.75rem; /* 12px */
-  --space-sm: 1rem; /* 16px */
-  --space-md: 1.5rem; /* 24px */
-  --space-lg: 2rem; /* 32px */
-  --space-xl: 3rem; /* 48px */
-  --space-2xl: 4rem; /* 64px */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
 
-  /* Typography — MUI Roboto stack and type scale */
   --font-sans: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   --font-mono: ui-monospace, Consolas, monospace;
-  --font-size-xs: 0.75rem; /* 12px — caption   */
-  --font-size-sm: 0.875rem; /* 14px — body2     */
-  --font-size-md: 1rem; /* 16px — body1     */
-  --font-size-lg: 1.25rem; /* 20px — h6        */
-  --font-size-xl: 1.5rem; /* 24px — h5        */
-  --font-size-2xl: 2.125rem; /* 34px — h4        */
-  --font-size-3xl: 3rem; /* 48px — h3        */
-  --font-size-4xl: 3.75rem; /* 60px — h2        */
-  --font-size-5xl: 6rem; /* 96px — h1        */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2.125rem;
+  --font-size-3xl: 3rem;
+  --font-size-4xl: 3.75rem;
+  --font-size-5xl: 6rem;
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
@@ -71,10 +56,6 @@ a {
   --line-height-tight: 1.15;
   --line-height-normal: 1.5;
 
-  /* Gradient — override start/end to retheme all four directions at once.
-     Each preset is named for where the start colour is strongest.
-     The stop tokens control strength: raise --gradient-start-stop to hold the
-     start colour longer; lower --gradient-end-stop to reach the end sooner. */
   --gradient-start: var(--accent);
   --gradient-end: var(--surface);
   --gradient-start-stop: 0%;
@@ -83,23 +64,4 @@ a {
   --gradient-bottom: linear-gradient(to top, var(--gradient-start) var(--gradient-start-stop), var(--gradient-end) var(--gradient-end-stop));
   --gradient-left: linear-gradient(to right, var(--gradient-start) var(--gradient-start-stop), var(--gradient-end) var(--gradient-end-stop));
   --gradient-right: linear-gradient(to left, var(--gradient-start) var(--gradient-start-stop), var(--gradient-end) var(--gradient-end-stop));
-
-  /* Radius */
-
-  /* Shadow */
 }
-
-/* Dark theme overrides */
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --text-heading: #f9fafb;
-    --text-body: #d1d5db;
-    --text-muted: #9ca3af;
-    --surface: #111827;
-    --surface-raised: #1f2937;
-    --surface-code: #1f2937;
-    --border: #374151;
-    --accent: #818cf8;
-    --accent-contrast: #111827;
-  }
-} */
