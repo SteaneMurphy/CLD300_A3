@@ -19,3 +19,33 @@
 .full {
   max-width: none;
 }
+
+/* Internal padding — keeps content inset so backgrounds stay edge-to-edge */
+.padding-sm {
+  padding: var(--space-sm);
+}
+
+.padding-md {
+  padding: var(--space-md);
+}
+
+.padding-lg {
+  padding: var(--space-lg);
+}
+
+/* Gradient backgrounds — consume the directional gradient tokens */
+.gradient-top {
+  background: var(--gradient-top);
+}
+
+.gradient-bottom {
+  background: var(--gradient-bottom);
+}
+
+.gradient-left {
+  background: var(--gradient-left);
+}
+
+.gradient-right {
+  background: var(--gradient-right);
+}

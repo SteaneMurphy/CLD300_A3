@@ -5,19 +5,23 @@
   grid-template-areas:
     'header  header'
     'sidebar main';
-  min-height: 100dvh;
+  height: 100dvh;
 }
 
 .header {
   grid-area: header;
+  border-bottom: 1px solid var(--border);
 }
 
 .sidebar {
   grid-area: sidebar;
+  min-height: 0; /* allow the grid item to shrink so the nav can scroll */
 }
 
 .main {
   grid-area: main;
   min-width: 0; /* let the 1fr column shrink so wide content scrolls internally */
+  min-height: 0; /* allow shrink below content height so main scrolls, not the page */
+  overflow-y: auto;
   padding: 2rem;
 }

@@ -6,8 +6,21 @@ export type ContainerSize =
   | 'lg'
   | 'full'
 
+export type GradientDirection =
+  | 'top'
+  | 'bottom'
+  | 'left'
+  | 'right'
+
+export type ContainerPadding =
+  | 'sm'
+  | 'md'
+  | 'lg'
+
 export interface ContainerFormat
 {
     size?: ContainerSize,
+    gradient?: GradientDirection,
+    padding?: ContainerPadding,
     children: ReactNode,
 }
