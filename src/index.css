@@ -37,7 +37,7 @@ a {
   --text-muted: #757575;
   --surface: #fafafa;
   --surface-raised: #ffffff;
-  --surface-code: #f5f5f5;
+  --surface-code: rgba(211, 219, 255, 0.842);
   --border: #e0e0e0;
   --accent: #1976d2;
   --accent-contrast: #ffffff;
@@ -70,6 +70,20 @@ a {
   --font-weight-semibold: 600;
   --line-height-tight: 1.15;
   --line-height-normal: 1.5;
+
+  /* Gradient — override start/end to retheme all four directions at once.
+     Each preset is named for where the start colour is strongest.
+     The stop tokens control strength: raise --gradient-start-stop to hold the
+     start colour longer; lower --gradient-end-stop to reach the end sooner. */
+  --gradient-start: var(--accent);
+  --gradient-end: var(--surface);
+  --gradient-start-stop: 0%;
+  --gradient-end-stop: 40%;
+  --gradient-top: linear-gradient(to bottom, var(--gradient-start) var(--gradient-start-stop), var(--gradient-end) var(--gradient-end-stop));
+  --gradient-bottom: linear-gradient(to top, var(--gradient-start) var(--gradient-start-stop), var(--gradient-end) var(--gradient-end-stop));
+  --gradient-left: linear-gradient(to right, var(--gradient-start) var(--gradient-start-stop), var(--gradient-end) var(--gradient-end-stop));
+  --gradient-right: linear-gradient(to left, var(--gradient-start) var(--gradient-start-stop), var(--gradient-end) var(--gradient-end-stop));
+
   /* Radius */
 
   /* Shadow */

@@ -21,7 +21,12 @@ export function Sidebar()
     return(
         <nav className={styles.nav}>
             {componentLinks.map(({ linkText, destination }) => (
-                <Link key={destination} destination={destination} linkText={linkText} />
+                <Link
+                    hoverBackground
+                    fillWidth
+                    key={destination} 
+                    destination={destination} 
+                    linkText={linkText} />
             ))}
         </nav>
     )

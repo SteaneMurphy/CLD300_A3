@@ -21,7 +21,8 @@ export const Route = createFileRoute('/components/button')({
 
 function ButtonDocs() {
   return (
-    <Container size="md">
+    <Container size="lg">
+      
       <Typography variant='h1'>Button</Typography>
       <Typography variant='body'>
         Buttons trigger an action. Pass a <Typography variant='code'>variant</Typography> to
