@@ -2,12 +2,14 @@ import { useState } from "react"
 import type { SwitchFormat } from "./Switch.types"
 import styles from "./Switch.module.css"
 
-export function Switch({ variant = 'standard', onClick, disabled = false, label }: SwitchFormat)
+export function Switch({ variant = 'standard', onClick, disabled = false, label, checked }: SwitchFormat)
 {
-  const [on, setOn] = useState(false)
+  const [internalOn, setInternalOn] = useState(false)
+  const isControlled = checked !== undefined
+  const on = isControlled ? checked : internalOn
 
   const toggle = () => {
-    setOn((prev) => !prev)
+    if (!isControlled) setInternalOn((prev) => !prev)
     onClick?.()
   }
 

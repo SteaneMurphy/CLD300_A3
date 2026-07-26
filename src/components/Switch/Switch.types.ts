@@ -10,4 +10,6 @@ export interface SwitchFormat
     disabled?: boolean,
     /** Accessible name for the toggle. */
     label?: string,
+    /** Controls the on/off state. Omit to let the Switch manage its own state. */
+    checked?: boolean,
 }
