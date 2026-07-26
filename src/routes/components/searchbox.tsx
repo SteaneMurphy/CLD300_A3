@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+import Typography from '../../components/Typography/Typography'
 import Container from '../../components/Container/Container'
 
 export const Route = createFileRoute('/components/searchbox')({
@@ -8,8 +9,10 @@ export const Route = createFileRoute('/components/searchbox')({
 function SearchBoxDocs() {
   return (
     <Container size="md">
-      <h1>SearchBox</h1>
-      <p>Placeholder page — component examples and variants go here.</p>
+      <Typography variant='h1'>SearchBox</Typography>
+      <Typography variant='body'>
+        Placeholder page: component examples and variants go here.
+      </Typography>
     </Container>
   )
 }

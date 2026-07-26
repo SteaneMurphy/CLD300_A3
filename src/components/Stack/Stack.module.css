@@ -2,7 +2,6 @@
   display: flex;
 }
 
-/* Direction */
 .stack[data-direction="row"] {
   flex-direction: row;
 }
@@ -11,7 +10,6 @@
   flex-direction: column;
 }
 
-/* Gap */
 .stack[data-gap="sm"] {
   gap: 0.5rem;
 }
@@ -24,7 +22,6 @@
   gap: 1.5rem;
 }
 
-/* Cross-axis alignment */
 .stack[data-align="start"] {
   align-items: flex-start;
 }
@@ -41,7 +38,6 @@
   align-items: stretch;
 }
 
-/* Main-axis distribution */
 .stack[data-justify="start"] {
   justify-content: flex-start;
 }
@@ -58,7 +54,6 @@
   justify-content: flex-end;
 }
 
-/* Wrapping */
 .stack[data-wrap] {
   flex-wrap: wrap;
 }

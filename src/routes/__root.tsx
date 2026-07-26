@@ -23,7 +23,6 @@ function RootLayout() {
         <Outlet />
       </main>
 
-      {/* Dev-only route inspector; tree-shaken out of production builds. */}
       <TanStackRouterDevtools position="bottom-right" />
     </div>
   )

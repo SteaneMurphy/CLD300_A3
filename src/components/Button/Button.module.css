@@ -22,7 +22,6 @@
   cursor: not-allowed;
 }
 
-/* Sizes */
 .sm {
   padding: 0.25rem 0.75rem;
   font-size: var(--font-size-sm);
@@ -38,7 +37,6 @@
   font-size: var(--font-size-lg);
 }
 
-/* Variants */
 .primary {
   background: var(--accent);
   color: var(--accent-contrast);

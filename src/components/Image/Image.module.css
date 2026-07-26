@@ -4,7 +4,6 @@
   height: auto;
 }
 
-/* Object fit — applies when width and/or height constrain the box */
 .cover {
   object-fit: cover;
 }
@@ -13,7 +12,6 @@
   object-fit: contain;
 }
 
-/* Corner radius */
 .none {
   border-radius: 0;
 }

@@ -15,14 +15,14 @@ const codeTheme = {
   'attr-value': { color: '#ffa657' },
 }
 
-export function CodeBlock({ code, language = 'tsx' }: CodeBlockFormat)
+export function CodeBlock({ code, language = 'tsx', squareTop = false }: CodeBlockFormat)
 {
   return(
     <SyntaxHighlighter
       language={language}
       style={codeTheme}
       className={styles.block}
-      customStyle={{ margin: 0 }}
+      customStyle={{ margin: 0, borderRadius: squareTop ? '0 0 8px 8px' : '8px' }}
     >
       {code}
     </SyntaxHighlighter>

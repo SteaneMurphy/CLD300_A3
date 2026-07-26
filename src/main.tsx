@@ -9,7 +9,6 @@ import './index.css'
 
 const router = createRouter({ routeTree })
 
-// Register the router instance for type-safe navigation across the app.
 declare module '@tanstack/react-router' {
   interface Register {
     router: typeof router

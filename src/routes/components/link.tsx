@@ -1,24 +1,16 @@
 import { createFileRoute } from '@tanstack/react-router'
 import Typography from '../../components/Typography/Typography'
-import CodeBlock from '../../components/CodeBlock/CodeBlock'
+import Example from '../../components/Example/Example'
+import Link from '../../components/Link/Link'
 import Container from '../../components/Container/Container'
+import Stack from '../../components/Stack/Stack'
 
 const codeSnippets = {
-  textOnly: `<Link
-  destination="/components/button"
-  linkText="View Button"
-/>`,
-  iconOnly: `<Link
-  icon="github"
-  iconOnly
-  destination="/components/button"
-  linkText="View source"
-/>`,
-  iconText: `<Link
-  icon="github"
-  destination="/components/button"
-  linkText="View source"
-/>`,
+  variants: `<Link destination="/components/button" linkText="View Button" />
+
+<Link icon="github" iconOnly destination="/components/button" linkText="View source" />
+
+<Link icon="github" destination="/components/button" linkText="View source" />`,
 }
 
 export const Route = createFileRoute('/components/link')({
@@ -35,28 +27,23 @@ function LinkDocs() {
         optional icon can sit alongside that text or replace it entirely.
       </Typography>
 
-      <Typography variant='h2'>Link — Text Only</Typography>
+      <Typography variant='h2'>Variants</Typography>
       <Typography variant='body'>
-        The default form. Provide a linkText and
-        a destination. Use this for inline
-        and body-copy links where the label alone is enough.
+        Three forms cover most needs. Text only is the default, for inline and
+        body-copy links where the label alone is enough. Icon only adds an icon
+        and iconOnly to hide the label, the text is still required and becomes
+        the accessible name via aria-label. Icon + text keeps both, with the
+        icon before the label, useful for navigation and call-to-action links.
       </Typography>
-      <CodeBlock code={codeSnippets.textOnly} />
-
-      <Typography variant='h2'>Link — Icon Only</Typography>
-      <Typography variant='body'>
-        Set icon to a sprite name and add iconOnly to hide the label. The
-        text is still required, it becomes the accessible name via aria-label,
-        so screen-reader users know where the link goes.
-      </Typography>
-      <CodeBlock code={codeSnippets.iconOnly} />
-
-      <Typography variant='h2'>Link — Icon + Text</Typography>
-      <Typography variant='body'>
-        Set icon to a sprite name and leave iconOnly off. The icon renders
-        before the label, useful for navigation and call-to-action links.
-      </Typography>
-      <CodeBlock code={codeSnippets.iconText} />
+      <Example code={codeSnippets.variants}>
+        <Container size='full'>
+          <Stack direction='row' align='center' justify='between' gap='lg'>
+            <Link destination='/components/button' linkText='View Button' />
+            <Link icon='github' iconOnly destination='/components/button' linkText='View source' />
+            <Link icon='github' destination='/components/button' linkText='View source' />
+          </Stack>
+        </Container>
+      </Example>
     </Container>
   )
 }
