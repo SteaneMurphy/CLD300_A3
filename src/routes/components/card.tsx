@@ -1,6 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
 import Typography from '../../components/Typography/Typography'
-import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Example from '../../components/Example/Example'
 import Card from '../../components/Card/Card'
 import Button from '../../components/Button/Button'
