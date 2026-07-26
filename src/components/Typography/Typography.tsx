@@ -3,6 +3,8 @@ import type { TypographyVariant, TypographyFormat } from "./Typography.types"
 import styles from "./Typography.module.css"
 
 const variantElements: Record<TypographyVariant, ElementType> = {
+  display: 'h1',
+  headline: 'h2',
   h1: 'h1',
   h2: 'h2',
   h3: 'h3',
