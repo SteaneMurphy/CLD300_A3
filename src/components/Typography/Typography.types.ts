@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 
 export type TypographyVariant =
+  | 'display'
+  | 'headline'
   | 'h1'
   | 'h2'
   | 'h3'

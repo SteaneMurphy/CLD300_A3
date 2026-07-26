@@ -4,6 +4,8 @@ import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Container from '../../components/Container/Container'
 
 const codeSnippets = {
+  display: `<Typography variant="display">Display</Typography>`,
+  headline: `<Typography variant="headline">Headline</Typography>`,
   h1: `<Typography variant="h1">Heading 1</Typography>`,
   h2: `<Typography variant="h2">Heading 2</Typography>`,
   h3: `<Typography variant="h3">Heading 3</Typography>`,
@@ -23,9 +25,27 @@ function TypographyDocs() {
       <Typography variant='body'>
         Typography renders text at a consistent scale. Pass a <Typography variant='code'>variant</Typography> to
         pick the role; each variant maps to the appropriate semantic element and
-        pulls its size, weight, and colour from the design tokens. When no variant
-        is given it defaults to <Typography variant='code'>body</Typography>.
+        pulls its size, weight, and colour from the design tokens. Sizes follow the
+        Material UI type scale. When no variant is given it defaults to <Typography variant='code'>body</Typography>.
       </Typography>
+
+      <Typography variant='h2'>Display</Typography>
+      <Typography variant='body'>
+        The largest display size, matching MUI's <Typography variant='code'>h1</Typography> variant.
+        Reserve for hero and marketing moments rather than document structure.
+      </Typography>
+      <Typography variant='display'>The quick brown fox</Typography>
+      <Typography variant='caption'>6rem · 96px · MUI h1 · weight 300</Typography>
+      <CodeBlock code={codeSnippets.display} />
+
+      <Typography variant='h2'>Headline</Typography>
+      <Typography variant='body'>
+        A large display size, matching MUI's <Typography variant='code'>h2</Typography> variant.
+        Use for prominent section titles above the standard heading scale.
+      </Typography>
+      <Typography variant='headline'>The quick brown fox</Typography>
+      <Typography variant='caption'>3.75rem · 60px · MUI h2 · weight 300</Typography>
+      <CodeBlock code={codeSnippets.headline} />
 
       <Typography variant='h2'>Heading 1</Typography>
       <Typography variant='body'>
@@ -33,6 +53,7 @@ function TypographyDocs() {
         Use once per page for the primary title.
       </Typography>
       <Typography variant='h1'>The quick brown fox</Typography>
+      <Typography variant='caption'>3rem · 48px · MUI h3</Typography>
       <CodeBlock code={codeSnippets.h1} />
 
       <Typography variant='h2'>Heading 2</Typography>
@@ -40,6 +61,7 @@ function TypographyDocs() {
         Section heading, rendered as an <Typography variant='code'>h2</Typography>.
       </Typography>
       <Typography variant='h2'>The quick brown fox</Typography>
+      <Typography variant='caption'>2.125rem · 34px · MUI h4</Typography>
       <CodeBlock code={codeSnippets.h2} />
 
       <Typography variant='h2'>Heading 3</Typography>
@@ -47,6 +69,7 @@ function TypographyDocs() {
         Sub-section heading, rendered as an <Typography variant='code'>h3</Typography>.
       </Typography>
       <Typography variant='h3'>The quick brown fox</Typography>
+      <Typography variant='caption'>1.5rem · 24px · MUI h5</Typography>
       <CodeBlock code={codeSnippets.h3} />
 
       <Typography variant='h2'>Body</Typography>
@@ -58,6 +81,7 @@ function TypographyDocs() {
         The quick brown fox jumps over the lazy dog. Pack my box with five dozen
         liquor jugs.
       </Typography>
+      <Typography variant='caption'>1rem · 16px · MUI body1</Typography>
       <CodeBlock code={codeSnippets.body} />
 
       <Typography variant='h2'>Caption</Typography>
@@ -66,6 +90,7 @@ function TypographyDocs() {
         Use for labels, hints, and secondary detail.
       </Typography>
       <Typography variant='caption'>The quick brown fox jumps over the lazy dog</Typography>
+      <Typography variant='caption'>0.875rem · 14px · MUI body2</Typography>
       <CodeBlock code={codeSnippets.caption} />
 
       <Typography variant='h2'>Code</Typography>
@@ -75,6 +100,7 @@ function TypographyDocs() {
         the CodeBlock component instead.
       </Typography>
       <Typography variant='code'>const value = 42</Typography>
+      <Typography variant='caption'>0.875rem · 14px · monospace</Typography>
       <CodeBlock code={codeSnippets.code} />
     </Container>
   )
