@@ -44,7 +44,7 @@ export function Header()
                         icon="github"
                         iconSize="lg"
                         iconOnly
-                        destination="https://github.com/SteaneMurphy/CLD300_A2"
+                        destination="https://github.com/SteaneMurphy/CLD300_A3"
                         linkText=""
                     />
                 </Stack>
