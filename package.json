@@ -1,5 +1,5 @@
 {
-  "name": "cld300-a2",
+  "name": "cld300-a3",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -18,8 +18,7 @@
     "@fontsource/roboto": "^5.3.0",
     "@tanstack/react-router": "^1.170.17",
     "react": "^19.2.7",
-    "react-dom": "^19.2.7",
-    "react-syntax-highlighter": "^16.1.1"
+    "react-dom": "^19.2.7"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -32,7 +31,6 @@
     "@types/node": "^24.13.2",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
-    "@types/react-syntax-highlighter": "^15.5.13",
     "@vitejs/plugin-react": "^6.0.3",
     "@vitest/coverage-v8": "^4.1.10",
     "eslint": "^10.6.0",
