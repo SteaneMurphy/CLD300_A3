@@ -1,0 +1,18 @@
+.page {
+  --sidebar-width: 240px;
+
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.sidebar {
+  overflow-y: auto;
+  border-right: 1px solid var(--border);
+}
+
+.content {
+  min-width: 0;
+  overflow-y: auto;
+}

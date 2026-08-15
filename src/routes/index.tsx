@@ -1,33 +1,30 @@
-// Home route. Landing page for the client site.
-
 import { createFileRoute } from '@tanstack/react-router'
 import Container from '../components/Container/Container'
-import Stack from '../components/Stack/Stack'
+import Sidebar from '../components/Sidebar/Sidebar'
 import Typography from '../components/Typography/Typography'
-import Button from '../components/Button/Button'
+import type { SidebarItem } from '../components/Sidebar/Sidebar.types'
+import styles from './index.module.css'
 
 export const Route = createFileRoute('/')({
   component: Home,
 })
 
+const navItems: SidebarItem[] = [
+  { label: 'Home', destination: '/' },
+  { label: 'Explore', destination: '/' },
+  { label: 'Library', destination: '/' },
+]
+
 function Home() {
   return (
-    <Container size="md" padding="lg">
-      <Stack direction="column" gap="lg" align="start">
-        <Typography variant="display">Client name</Typography>
-        <Typography variant="body">
-          Placeholder hero copy for the client home page. Replace this with the
-          real proposition once the content is settled.
-        </Typography>
-        <Stack direction="row" gap="md" align="center">
-          <Button variant="primary" size="lg">
-            Primary action
-          </Button>
-          <Button variant="secondary" size="lg">
-            Secondary action
-          </Button>
-        </Stack>
-      </Stack>
-    </Container>
+    <div className={styles.page}>
+      <Container as="aside" size="full" padding="md" className={styles.sidebar}>
+        <Sidebar items={navItems} heading="Browse" />
+      </Container>
+
+      <Container as="main" size="full" padding="lg" className={styles.content}>
+        <Typography variant="h1">Home</Typography>
+      </Container>
+    </div>
   )
 }

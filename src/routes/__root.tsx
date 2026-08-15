@@ -1,5 +1,3 @@
-// Root route. Defines the site shell layout of header and main content outlet.
-
 import { createRootRoute, Outlet } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import { Header } from '../components/Header/Header'
@@ -16,9 +14,7 @@ function RootLayout() {
         <Header />
       </header>
 
-      <main className={styles.main}>
-        <Outlet />
-      </main>
+      <Outlet />
 
       <TanStackRouterDevtools position="bottom-right" />
     </div>
