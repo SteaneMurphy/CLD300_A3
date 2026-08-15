@@ -1,20 +1,10 @@
-/* Layout styles for the site shell grid: header and main regions. */
-
 .shell {
   display: grid;
   grid-template-rows: auto 1fr;
-  grid-template-areas:
-    'header'
-    'main';
-  min-height: 100dvh;
+  height: 100dvh;
+  overflow: hidden;
 }
 
 .header {
-  grid-area: header;
   border-bottom: 1px solid var(--border);
-}
-
-.main {
-  grid-area: main;
-  min-width: 0;
 }
