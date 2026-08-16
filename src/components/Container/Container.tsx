@@ -1,5 +1,6 @@
 // Container component. Constrains content to a maximum width and centres it horizontally.
 
+import type { CSSProperties } from 'react'
 import type { ContainerFormat } from './Container.types'
 import styles from './Container.module.css'
 
@@ -12,6 +13,7 @@ export function Container({
   size = 'lg',
   gradient,
   padding,
+  backgroundImage,
   className: extraClassName,
   children,
 }: ContainerFormat) {
@@ -20,12 +22,21 @@ export function Container({
     styles[size],
     gradient && styles[`gradient-${gradient}`],
     padding && styles[`padding-${padding}`],
+    backgroundImage && styles.backgroundImage,
     extraClassName,
   ]
     .filter(Boolean)
     .join(' ')
 
-  return <Tag className={className}>{children}</Tag>
+  const style = backgroundImage
+    ? ({ '--container-image': `url(${backgroundImage})` } as CSSProperties)
+    : undefined
+
+  return (
+    <Tag className={className} style={style}>
+      {children}
+    </Tag>
+  )
 }
 
 export default Container

@@ -16,6 +16,7 @@ export interface ContainerFormat {
   size?: ContainerSize
   gradient?: GradientDirection
   padding?: ContainerPadding
+  backgroundImage?: string
   className?: string
   children: ReactNode
 }
