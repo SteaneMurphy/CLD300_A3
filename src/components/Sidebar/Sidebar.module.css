@@ -4,14 +4,6 @@
   gap: var(--space-md);
 }
 
-.heading {
-  color: var(--text-muted);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 .list {
   display: flex;
   flex-direction: column;

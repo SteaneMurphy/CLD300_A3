@@ -7,22 +7,21 @@ import Stack from '../Stack/Stack'
 import Button from '../Button/Button'
 import Typography from '../Typography/Typography'
 
-export function Sidebar({ items, heading }: SidebarFormat) {
+export function Sidebar({ items }: SidebarFormat) {
   return (
     <nav className={styles.sidebar} aria-label="Main">
-      {heading && <span className={styles.heading}>{heading}</span>}
-
       <Stack
         direction='row'
       >
-        <Icon 
+        <Icon
           src={IconMenu.path}
           size='md'
         />
 
-        <Icon 
+        <Icon
           src={YoutubeMusicLogo.path}
           size='lg'
+          label="YouTube Music"
         />
       </Stack>
 
