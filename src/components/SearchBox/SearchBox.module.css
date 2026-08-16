@@ -1,9 +1,6 @@
 /* Styles for the SearchBox component: the bordered field that holds the icon and input. */
 
 .searchBox {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2xs);
   width: 100%;
   padding: var(--space-3xs) var(--space-xs);
   border: 1px solid var(--border);

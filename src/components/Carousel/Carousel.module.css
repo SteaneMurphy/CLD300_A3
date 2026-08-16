@@ -1,0 +1,28 @@
+/* Styles for the Carousel component: the heading row, the scrolling track, and its items. */
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/*
+ * The track scrolls rather than wrapping. min-width: 0 stops it widening its
+ * parent past the viewport, and the scrollbar is hidden since the nav buttons
+ * are the intended control.
+ */
+.track {
+  min-width: 0;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.item {
+  flex: 0 0 auto;
+  width: 12rem;
+}
