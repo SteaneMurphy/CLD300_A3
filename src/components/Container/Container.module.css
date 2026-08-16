@@ -3,6 +3,8 @@
 .container {
   width: 100%;
   margin-inline: auto;
+  background-image:
+    var(--container-gradient, none), var(--container-image, none);
 }
 
 .sm {
@@ -34,17 +36,23 @@
 }
 
 .gradient-top {
-  background: var(--gradient-top);
+  --container-gradient: var(--gradient-top);
 }
 
 .gradient-bottom {
-  background: var(--gradient-bottom);
+  --container-gradient: var(--gradient-bottom);
 }
 
 .gradient-left {
-  background: var(--gradient-left);
+  --container-gradient: var(--gradient-left);
 }
 
 .gradient-right {
-  background: var(--gradient-right);
+  --container-gradient: var(--gradient-right);
+}
+
+.backgroundImage {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
