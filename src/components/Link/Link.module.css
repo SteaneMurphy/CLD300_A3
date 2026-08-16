@@ -19,7 +19,9 @@
 .hoverBackground {
   padding: var(--space-2xs) var(--space-xs);
   border-radius: 4px;
-  transition: background 120ms ease, color 120ms ease;
+  transition:
+    background 120ms ease,
+    color 120ms ease;
 }
 
 .hoverBackground:hover,

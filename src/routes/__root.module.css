@@ -1,10 +1,6 @@
 .shell {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: 1fr;
   height: 100dvh;
   overflow: hidden;
-}
-
-.header {
-  border-bottom: 1px solid var(--border);
 }

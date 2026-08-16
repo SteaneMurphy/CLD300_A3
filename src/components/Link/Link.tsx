@@ -7,13 +7,22 @@ import Icon from '../Icon/Icon'
 
 // regex is used to determine if the link destination attribute passed in is external or internal.
 // checks on "https:/"
-export function Link({ icon, iconOnly, iconSize = 'sm', linkText, destination, hoverBackground, fillWidth }: LinkFormat) {
+export function Link({
+  icon,
+  iconSrc,
+  iconOnly,
+  iconSize = 'sm',
+  linkText,
+  destination,
+  hoverBackground,
+  fillWidth,
+}: LinkFormat) {
   const isExternal = /^https?:\/\//.test(destination)
 
   // .filter(Boolean) filters out the boolean conditions sent into the className attribute. Falsey
   // boolean conditions are dropped so that only truthy conditions remain.
   // .join(' ') then combines the remaining class names into the single
-  // space-separated string that className expects 
+  // space-separated string that className expects
   const className = [
     styles.link,
     hoverBackground && styles.hoverBackground,
@@ -23,9 +32,11 @@ export function Link({ icon, iconOnly, iconSize = 'sm', linkText, destination, h
     .join(' ')
 
   // content is created based on conditional rendering and passed to the final return
+  const iconHref = iconSrc ?? (icon ? `/icons.svg#${icon}-icon` : undefined)
+
   const content = (
     <>
-      {icon && <Icon src={`/icons.svg#${icon}-icon`} size={iconSize} />}
+      {iconHref && <Icon src={iconHref} size={iconSize} />}
       {!iconOnly && <span>{linkText}</span>}
     </>
   )
@@ -46,7 +57,11 @@ export function Link({ icon, iconOnly, iconSize = 'sm', linkText, destination, h
   }
 
   return (
-    <RouterLink className={className} to={destination} aria-label={iconOnly ? linkText : undefined}>
+    <RouterLink
+      className={className}
+      to={destination}
+      aria-label={iconOnly ? linkText : undefined}
+    >
       {content}
     </RouterLink>
   )
