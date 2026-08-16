@@ -1,0 +1,34 @@
+/* Styles for the Input component: shared text rules plus the variant chrome. */
+
+.input {
+  width: 100%;
+  color: var(--text-body);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.default {
+  padding: var(--space-2xs) var(--space-xs);
+  border: 1px solid var(--border);
+  border-radius: var(--space-3xs);
+  background: var(--surface-raised);
+}
+
+.default:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.bare {
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.bare:focus-visible {
+  outline: none;
+}
