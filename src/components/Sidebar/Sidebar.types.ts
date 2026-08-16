@@ -1,9 +1,6 @@
-export interface SidebarItem {
-  label: string
-  destination: string
-}
+import type { NavLinkFormat } from '../../constants/constants'
 
 export interface SidebarFormat {
-  items: SidebarItem[]
+  items: NavLinkFormat[]
   heading?: string
 }

@@ -10,9 +10,6 @@ export const Route = createRootRoute({
 function RootLayout() {
   return (
     <div className={styles.shell}>
-      <header className={styles.header}>
-        <Header />
-      </header>
 
       <Outlet />
 
