@@ -4,12 +4,13 @@ import Sidebar from '../components/Sidebar/Sidebar'
 import Typography from '../components/Typography/Typography'
 import { SidebarLinks } from '../constants/constants'
 import styles from './index.module.css'
-import { Background, Promo, IconOverflow, IconSearch } from '../constants/constants'
+import { Background, Promo, IconOverflow, IconSearch, Shelves } from '../constants/constants'
 import Image from '../components/Image/Image'
 import Stack from '../components/Stack/Stack'
 import Button from '../components/Button/Button'
 import Icon from '../components/Icon/Icon'
 import SearchBox from '../components/SearchBox/SearchBox'
+import Carousel from '../components/Carousel/Carousel'
 
 export const Route = createFileRoute('/')({
   component: Home,
@@ -50,6 +51,14 @@ function Home() {
 
 
         {/* PLAYLIST CONTENT - GENERATED ON SCROLL */}
+        {Shelves.map((carousel) => (
+          <li key={carousel.heading}>
+            <Carousel 
+              heading={carousel.heading}
+              cards={carousel.cards}
+            />
+          </li>
+        ))}
 
 
         {/* PROMO */}

@@ -1,34 +1,23 @@
 // Type definitions for the Stack component props: direction, gap, alignment, and wrapping.
 
-import type { ReactNode } from "react";
+import type { ReactNode, Ref, UIEventHandler } from 'react'
 
-export type StackDirection =
-  | 'row'
-  | 'column'
+export type StackDirection = 'row' | 'column'
 
-export type StackGap =
-  | 'sm'
-  | 'md'
-  | 'lg'
+export type StackGap = 'sm' | 'md' | 'lg'
 
-export type StackAlign =
-  | 'start'
-  | 'center'
-  | 'end'
-  | 'stretch'
+export type StackAlign = 'start' | 'center' | 'end' | 'stretch'
 
-export type StackJustify =
-  | 'start'
-  | 'center'
-  | 'between'
-  | 'end'
+export type StackJustify = 'start' | 'center' | 'between' | 'end'
 
-export interface StackFormat
-{
-    direction?: StackDirection,
-    gap?: StackGap,
-    align?: StackAlign,
-    justify?: StackJustify,
-    wrap?: boolean,
-    children: ReactNode,
+export interface StackFormat {
+  direction?: StackDirection
+  gap?: StackGap
+  align?: StackAlign
+  justify?: StackJustify
+  wrap?: boolean
+  className?: string
+  ref?: Ref<HTMLDivElement>
+  onScroll?: UIEventHandler<HTMLDivElement>
+  children: ReactNode
 }

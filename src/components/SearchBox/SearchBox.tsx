@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Button from '../Button/Button'
 import Icon from '../Icon/Icon'
 import Input from '../Input/Input'
+import Stack from '../Stack/Stack'
 import styles from './SearchBox.module.css'
 import type { SearchBoxFormat } from './SearchBox.types'
 
@@ -22,10 +23,10 @@ export function SearchBox({
   )
 
   return (
-    <div className={styles.searchBox}>
+    <Stack direction="row" gap="sm" align="center" className={styles.searchBox}>
       {iconPosition === 'left' && searchButton}
 
-      <div className={styles.field}>
+      <Stack className={styles.field}>
         <Input
           type="search"
           variant="bare"
@@ -34,10 +35,10 @@ export function SearchBox({
           placeholder={placeholder}
           label={placeholder}
         />
-      </div>
+      </Stack>
 
       {iconPosition === 'right' && searchButton}
-    </div>
+    </Stack>
   )
 }
 

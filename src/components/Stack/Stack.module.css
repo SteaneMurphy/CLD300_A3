@@ -4,55 +4,55 @@
   display: flex;
 }
 
-.stack[data-direction="row"] {
+.stack[data-direction='row'] {
   flex-direction: row;
 }
 
-.stack[data-direction="column"] {
+.stack[data-direction='column'] {
   flex-direction: column;
 }
 
-.stack[data-gap="sm"] {
+.stack[data-gap='sm'] {
   gap: 0.5rem;
 }
 
-.stack[data-gap="md"] {
+.stack[data-gap='md'] {
   gap: 1rem;
 }
 
-.stack[data-gap="lg"] {
+.stack[data-gap='lg'] {
   gap: 1.5rem;
 }
 
-.stack[data-align="start"] {
+.stack[data-align='start'] {
   align-items: flex-start;
 }
 
-.stack[data-align="center"] {
+.stack[data-align='center'] {
   align-items: center;
 }
 
-.stack[data-align="end"] {
+.stack[data-align='end'] {
   align-items: flex-end;
 }
 
-.stack[data-align="stretch"] {
+.stack[data-align='stretch'] {
   align-items: stretch;
 }
 
-.stack[data-justify="start"] {
+.stack[data-justify='start'] {
   justify-content: flex-start;
 }
 
-.stack[data-justify="center"] {
+.stack[data-justify='center'] {
   justify-content: center;
 }
 
-.stack[data-justify="between"] {
+.stack[data-justify='between'] {
   justify-content: space-between;
 }
 
-.stack[data-justify="end"] {
+.stack[data-justify='end'] {
   justify-content: flex-end;
 }
 
