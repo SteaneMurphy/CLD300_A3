@@ -6,6 +6,7 @@ import iconOverflow from '../assets/icons/whiteTripleDots.svg'
 import iconSearch from '../assets/icons/greyMagGlass.svg'
 import iconArrowLeft from '../assets/icons/whiteLeftArrow.svg'
 import iconArrowRight from '../assets/icons/whiteRightArrow.svg'
+import iconPlay from '../assets/icons/greyPlay.svg'
 
 import card1 from '../assets/cards/card1.png'
 import card2 from '../assets/cards/card2.png'
@@ -190,6 +191,10 @@ export const IconArrowLeft: StandAloneImageFormat = {
 
 export const IconArrowRight: StandAloneImageFormat = {
   path: iconArrowRight,
+}
+
+export const IconPlay: StandAloneImageFormat = {
+  path: iconPlay,
 }
 
 export const Background: StandAloneImageFormat = {

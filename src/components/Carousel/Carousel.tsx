@@ -6,6 +6,9 @@ import Card from '../Card/Card'
 import Icon from '../Icon/Icon'
 import Image from '../Image/Image'
 import Stack from '../Stack/Stack'
+import { Stagger, StaggerItem } from '../Stagger/Stagger'
+import PlayOverlay from '../PlayOverlay/PlayOverlay'
+import FadeIn from '../FadeIn/FadeIn'
 import Typography from '../Typography/Typography'
 import { IconArrowLeft, IconArrowRight } from '../../constants/constants'
 import styles from './Carousel.module.css'
@@ -26,6 +29,8 @@ export function Carousel({
   const trackRef = useRef<HTMLDivElement>(null)
   const [atStart, setAtStart] = useState(true)
   const [atEnd, setAtEnd] = useState(true)
+  // The previous and next controls stay hidden until the row is hovered.
+  const [hovered, setHovered] = useState(false)
 
   const updateBounds = useCallback(() => {
     const track = trackRef.current
@@ -49,31 +54,35 @@ export function Carousel({
   }
 
   return (
-    <div
+    <Stagger
       className={[styles.carousel, styles[layout], extraClassName]
         .filter(Boolean)
         .join(' ')}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
       <Stack direction="row" justify="between" align="center">
         <Typography variant="h1">{heading}</Typography>
 
-        <Stack direction="row" gap="sm" align="center">
-          <Button
-            variant="youtube-icon"
-            disabled={atStart}
-            onClick={() => scrollByPage(-1)}
-          >
-            <Icon src={IconArrowLeft.path} size="md" label="Previous" />
-          </Button>
+        <FadeIn visible={hovered}>
+          <Stack direction="row" gap="sm" align="center">
+            <Button
+              variant="youtube-icon"
+              disabled={atStart}
+              onClick={() => scrollByPage(-1)}
+            >
+              <Icon src={IconArrowLeft.path} size="md" label="Previous" />
+            </Button>
 
-          <Button
-            variant="youtube-icon"
-            disabled={atEnd}
-            onClick={() => scrollByPage(1)}
-          >
-            <Icon src={IconArrowRight.path} size="md" label="Next" />
-          </Button>
-        </Stack>
+            <Button
+              variant="youtube-icon"
+              disabled={atEnd}
+              onClick={() => scrollByPage(1)}
+            >
+              <Icon src={IconArrowRight.path} size="md" label="Next" />
+            </Button>
+          </Stack>
+        </FadeIn>
       </Stack>
 
       <Stack
@@ -84,9 +93,11 @@ export function Carousel({
         onScroll={updateBounds}
       >
         {cards.map((card) => (
-          <Stack key={card.path} className={styles.item}>
+          <StaggerItem key={card.path} className={styles.item}>
             <Card variant="naked" padding="none">
-              <Image src={card.path} alt="" fit="cover" radius="md" />
+              <PlayOverlay>
+                <Image src={card.path} alt="" fit="cover" radius="md" />
+              </PlayOverlay>
               <div className={styles.meta}>
                 <Typography variant="body">{card.title}</Typography>
                 <Typography variant="caption">
@@ -96,10 +107,10 @@ export function Carousel({
                 </Typography>
               </div>
             </Card>
-          </Stack>
+          </StaggerItem>
         ))}
       </Stack>
-    </div>
+    </Stagger>
   )
 }
 
