@@ -1,9 +1,22 @@
 /* Styles for the Carousel component: the heading row, the scrolling track, and its items. */
 
 .carousel {
+  /*
+   * How many whole cards fill the visible track. Declared on the root so the
+   * layout classes below can override it; --card-gap must match the Stack gap
+   * prop on the track, which an attribute selector puts out of this file's reach.
+   */
+  --cards-visible: 6;
+  --card-gap: 0.5rem;
+
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+}
+
+/* 16:9 artwork is nearly three times as wide as it is tall, so fewer fit. */
+.wide {
+  --cards-visible: 3;
 }
 
 /*
@@ -22,7 +35,25 @@
   display: none;
 }
 
+/*
+ * Each card takes an equal share of the track once the gaps between them are
+ * subtracted, so scrollByPage (which scrolls by clientWidth) lands on a card
+ * boundary every time.
+ */
 .item {
-  flex: 0 0 auto;
-  width: 12rem;
+  flex: 0 0
+    calc(
+      (100% - (var(--cards-visible) - 1) * var(--card-gap)) /
+        var(--cards-visible)
+    );
+}
+
+/*
+ * Title and description sit tight against each other, separately from the
+ * larger gap between the artwork and the text block (set by the Card's gap).
+ */
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
 }

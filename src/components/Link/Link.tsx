@@ -16,6 +16,8 @@ export function Link({
   destination,
   hoverBackground,
   fillWidth,
+  gap,
+  size,
 }: LinkFormat) {
   const isExternal = /^https?:\/\//.test(destination)
 
@@ -27,6 +29,8 @@ export function Link({
     styles.link,
     hoverBackground && styles.hoverBackground,
     fillWidth && styles.fillWidth,
+    gap && styles[`gap-${gap}`],
+    size && styles[`size-${size}`],
   ]
     .filter(Boolean)
     .join(' ')

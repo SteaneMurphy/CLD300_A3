@@ -11,7 +11,10 @@
   border: 1px solid transparent;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease, filter 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    filter 0.15s ease;
 }
 
 .button:focus-visible {
@@ -68,4 +71,72 @@
 
 .ghost:hover:not(:disabled) {
   background: var(--surface-raised);
+}
+
+.youtube-primary {
+  background: var(--accent);
+  color: var(--surface);
+  border: 0;
+  border-radius: 16px;
+  height: 32px;
+  width: 80px;
+  padding: 0 16px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: normal;
+}
+
+.youtube-secondary {
+  background: var(--accent-secondary);
+  color: var(--accent);
+  border: 0;
+  border-radius: 16px;
+  height: 36px;
+  width: auto;
+  padding: 0 16px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: normal;
+}
+
+.youtube-secondary:hover:not(:disabled) {
+  background: #353535;
+}
+
+.youtube-ghost {
+  background: var(--surface-code);
+  color: var(--accent);
+  border: 0;
+  border-radius: 8px;
+  height: 36px;
+  width: auto;
+  padding: 0 16px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: normal;
+}
+
+.youtube-ghost:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/*
+ * Circular icon button, used for the carousel's previous and next controls.
+ * Width matches height so border-radius: 50% renders a true circle, and the
+ * size is fixed here rather than coming from the size prop.
+ */
+.youtube-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-color: var(--border);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0);
+  color: var(--text-heading);
+}
+
+.youtube-icon:hover:not(:disabled) {
+  filter: brightness(1.4);
+  background: rgba(255, 255, 255, 0.2);
 }

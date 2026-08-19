@@ -10,30 +10,26 @@ import Typography from '../Typography/Typography'
 export function Sidebar({ items }: SidebarFormat) {
   return (
     <nav className={styles.sidebar} aria-label="Main">
-      <Stack
-        direction='row'
-      >
-        <Icon
-          src={IconMenu.path}
-          size='md'
-        />
+      <Stack direction="row" gap="md" align="center" className="sidebar-header">
+        <Icon src={IconMenu.path} size="md" />
 
-        <Icon
+        <img
+          className={styles.logo}
           src={YoutubeMusicLogo.path}
-          size='lg'
-          label="YouTube Music"
+          alt="YouTube Music"
         />
       </Stack>
 
-
-      <ul className={styles.list}>
+      <ul className={`${styles.list} sidebar-links`}>
         {items.map((item) => (
           <li key={item.text}>
             <Link
               destination={item.url}
               linkText={item.text}
               iconSrc={item.icon}
-              iconSize='md'
+              iconSize="md"
+              gap="md"
+              size="lg"
               hoverBackground
               fillWidth
             />
@@ -41,11 +37,21 @@ export function Sidebar({ items }: SidebarFormat) {
         ))}
       </ul>
 
-       <hr style={{ border: "none", width: "100%", height: "1px", backgroundColor: "#282828" }} />
+      <hr
+        style={{
+          border: 'none',
+          width: '100%',
+          height: '1px',
+          backgroundColor: '#282828',
+        }}
+      />
 
-       <Button variant='secondary'>Sign In</Button>
+      <Button variant="youtube-secondary">Sign In</Button>
 
-       <Typography variant='caption'>Sign in to create & share playlists, get personalized recommendations, and more.</Typography>
+      <Typography variant="caption">
+        Sign in to create & share playlists, get personalized recommendations,
+        and more.
+      </Typography>
     </nav>
   )
 }

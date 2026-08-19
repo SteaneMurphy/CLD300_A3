@@ -12,9 +12,14 @@ export function SearchBox({
   placeholder,
   icon,
   iconPosition = 'left',
+  variant,
   onSearch,
 }: SearchBoxFormat) {
   const [value, setValue] = useState('')
+
+  const className = [styles.searchBox, variant && styles[variant]]
+    .filter(Boolean)
+    .join(' ')
 
   const searchButton = (
     <Button variant="ghost" size="sm" onClick={() => onSearch?.(value)}>
@@ -23,7 +28,7 @@ export function SearchBox({
   )
 
   return (
-    <Stack direction="row" gap="sm" align="center" className={styles.searchBox}>
+    <Stack direction="row" gap="sm" align="center" className={className}>
       {iconPosition === 'left' && searchButton}
 
       <Stack className={styles.field}>

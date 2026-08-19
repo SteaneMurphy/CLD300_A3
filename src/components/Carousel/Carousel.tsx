@@ -17,7 +17,12 @@ function formatViews(views: number) {
     : `${Math.round(views / 1_000)}K views`
 }
 
-export function Carousel({ heading, cards }: CarouselFormat) {
+export function Carousel({
+  heading,
+  cards,
+  layout = 'square',
+  className: extraClassName,
+}: CarouselFormat) {
   const trackRef = useRef<HTMLDivElement>(null)
   const [atStart, setAtStart] = useState(true)
   const [atEnd, setAtEnd] = useState(true)
@@ -44,14 +49,17 @@ export function Carousel({ heading, cards }: CarouselFormat) {
   }
 
   return (
-    <div className={styles.carousel}>
+    <div
+      className={[styles.carousel, styles[layout], extraClassName]
+        .filter(Boolean)
+        .join(' ')}
+    >
       <Stack direction="row" justify="between" align="center">
-        <Typography variant="h3">{heading}</Typography>
+        <Typography variant="h1">{heading}</Typography>
 
         <Stack direction="row" gap="sm" align="center">
           <Button
-            variant="ghost"
-            size="sm"
+            variant="youtube-icon"
             disabled={atStart}
             onClick={() => scrollByPage(-1)}
           >
@@ -59,8 +67,7 @@ export function Carousel({ heading, cards }: CarouselFormat) {
           </Button>
 
           <Button
-            variant="ghost"
-            size="sm"
+            variant="youtube-icon"
             disabled={atEnd}
             onClick={() => scrollByPage(1)}
           >
@@ -72,20 +79,22 @@ export function Carousel({ heading, cards }: CarouselFormat) {
       <Stack
         ref={trackRef}
         direction="row"
-        gap="md"
+        gap="lg"
         className={styles.track}
         onScroll={updateBounds}
       >
         {cards.map((card) => (
           <Stack key={card.path} className={styles.item}>
-            <Card variant="outlined" padding="sm">
+            <Card variant="naked" padding="none">
               <Image src={card.path} alt="" fit="cover" radius="md" />
-              <Typography variant="body">{card.title}</Typography>
-              <Typography variant="caption">
-                {card.artists
-                  ? card.artists.join(', ')
-                  : `${card.username} • ${formatViews(card.views)}`}
-              </Typography>
+              <div className={styles.meta}>
+                <Typography variant="body">{card.title}</Typography>
+                <Typography variant="caption">
+                  {card.artists
+                    ? card.artists.join(', ')
+                    : `${card.username} • ${formatViews(card.views)}`}
+                </Typography>
+              </div>
             </Card>
           </Stack>
         ))}
