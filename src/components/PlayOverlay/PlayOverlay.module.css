@@ -1,0 +1,36 @@
+/* Styles for the PlayOverlay component: the artwork frame, the gradient wash, and the play button. */
+
+/*
+ * The frame is the positioning context for the overlay and clips it to the
+ * artwork's rounded corners, so the wash never spills past the image edge.
+ */
+.frame {
+  position: relative;
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/*
+ * pointer-events: none keeps the wash from swallowing clicks meant for the
+ * artwork underneath, so the whole tile stays clickable while hovered.
+ */
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    to bottom,
+    rgba(80, 80, 80, 0.45),
+    rgba(25, 25, 25, 0.75)
+  );
+  pointer-events: none;
+}
+
+.play {
+  width: 3rem;
+  height: 3rem;
+  display: block;
+}
