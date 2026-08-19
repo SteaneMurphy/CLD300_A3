@@ -4,7 +4,7 @@ import iconLibrary from '../assets/icons/whiteBookmark.svg'
 import iconMenu from '../assets/icons/whiteHamburgerIcon.svg'
 import iconOverflow from '../assets/icons/whiteTripleDots.svg'
 import iconSearch from '../assets/icons/greyMagGlass.svg'
-import iconArrowLeft from '../assets/icons/greyLeftArrow.svg'
+import iconArrowLeft from '../assets/icons/whiteLeftArrow.svg'
 import iconArrowRight from '../assets/icons/whiteRightArrow.svg'
 
 import card1 from '../assets/cards/card1.png'
@@ -132,6 +132,8 @@ import cardLong7 from '../assets/cards/cardLong7.jpg'
 import cardLong8 from '../assets/cards/cardLong8.jpg'
 import cardLong9 from '../assets/cards/cardLong9.jpg'
 import cardLong10 from '../assets/cards/cardLong10.jpg'
+
+import type { CarouselLayout } from '../components/Carousel/Carousel.types'
 
 import logoYoutubeMusic from '../assets/logos/youtubeMusicLogo.svg'
 
@@ -1008,6 +1010,8 @@ export const EditorsPicks: CardFormat[] = [
 export interface ShelfFormat {
   heading: string
   cards: CardFormat[]
+  /** Wide shelves hold 16:9 artwork and show fewer, larger cards. */
+  layout?: CarouselLayout
 }
 
 export const Shelves: ShelfFormat[] = [
@@ -1022,10 +1026,12 @@ export const Shelves: ShelfFormat[] = [
   {
     heading: 'Featured mixes',
     cards: FeaturedMixes,
+    layout: 'wide',
   },
   {
     heading: "Editor's picks this week",
     cards: EditorsPicks,
+    layout: 'wide',
   },
   {
     heading: 'Late night drives',

@@ -3,12 +3,13 @@
 .link {
   display: inline-flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 0.5rem;
   font-family: var(--font-sans);
   font-size: var(--font-size-md);
   color: var(--text-body);
   text-decoration: none;
-  margin: 0 0.5rem;
+  /* margin: 0 0.5rem; */
 }
 
 .fillWidth {
@@ -17,7 +18,7 @@
 }
 
 .hoverBackground {
-  padding: var(--space-2xs) var(--space-xs);
+  /* padding: var(--space-2xs) var(--space-xs); */
   border-radius: 4px;
   transition:
     background 120ms ease,
@@ -26,6 +27,34 @@
 
 .hoverBackground:hover,
 .hoverBackground:focus-visible {
-  background: var(--accent);
-  color: var(--accent-contrast);
+  background: #353535;
+}
+
+/* Overrides the base 0.5rem gap between the icon and the text. */
+.gap-sm {
+  gap: var(--space-2xs);
+}
+
+.gap-md {
+  gap: var(--space-sm);
+}
+
+.gap-lg {
+  gap: var(--space-md);
+}
+
+/*
+ * Row height. min-height rather than height so a wrapped label grows the row
+ * instead of overflowing it; the base align-items: center keeps content centred.
+ */
+.size-sm {
+  min-height: 2rem;
+}
+
+.size-md {
+  min-height: 2.5rem;
+}
+
+.size-lg {
+  min-height: 3rem;
 }

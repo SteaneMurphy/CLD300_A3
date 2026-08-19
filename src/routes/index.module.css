@@ -12,7 +12,15 @@
   border-right: 1px solid var(--border);
 }
 
+/*
+ * The main window owns its own padding rather than taking the Container's
+ * padding prop, so the side gutters can be set independently of the vertical
+ * rhythm. --gutter is the single knob for the horizontal inset.
+ */
 .content {
+  --gutter: var(--space-4xl);
+
   min-width: 0;
   overflow-y: auto;
+  padding: var(--space-lg) var(--gutter);
 }

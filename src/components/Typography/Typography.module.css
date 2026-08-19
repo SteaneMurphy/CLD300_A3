@@ -1,5 +1,18 @@
 /* Styles for the Typography component: one class per variant. */
 
+/*
+ * The block-level variants render as <p> and <h*>, which carry browser default
+ * margins. Spacing is owned by the surrounding layout, so reset them here.
+ */
+.display,
+.headline,
+.h1,
+.h2,
+.h3,
+.body {
+  margin: 0;
+}
+
 .display {
   font-family: var(--font-sans);
   font-size: var(--font-size-5xl);
@@ -50,7 +63,7 @@
 
 .caption {
   font-family: var(--font-sans);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-normal);
   color: var(--text-muted);

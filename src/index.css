@@ -18,18 +18,84 @@ a {
   text-decoration: none;
 }
 
-:root {
-  color-scheme: light dark;
+/*
+ * Site layout. Stacks the main window's sections into a single column and owns
+ * the vertical rhythm between them, so every carousel is spaced from the next
+ * by one value rather than each section managing its own margins.
+ */
+.site-layout {
+  display: flex;
+  flex-direction: column;
+}
 
-  --text-heading: #212121;
-  --text-body: #424242;
-  --text-muted: #757575;
-  --surface: #fafafa;
-  --surface-raised: #ffffff;
-  --surface-code: rgba(211, 219, 255, 0.842);
-  --border: #e0e0e0;
-  --accent: #1976d2;
-  --accent-contrast: #ffffff;
+/*
+ * Promo block. The artwork and the copy sit next to each other and the pair is
+ * centred in the main window, rather than being pushed to opposite edges.
+ * The separation is a margin rather than a gap because Stack sets its gap
+ * through an attribute selector this class cannot outrank.
+ */
+.promo {
+  align-items: center;
+  justify-content: center;
+  padding-block: var(--space-4xl);
+}
+
+.promo > * + * {
+  margin-left: var(--space-2xl);
+}
+
+/*
+ * Main window sections. .site-layout deliberately sets no gap, so each section
+ * below owns the space beneath itself and every value here is the whole story
+ * rather than an addition to a shared baseline.
+ */
+.search-row {
+  margin-bottom: var(--space-2xl);
+}
+
+.category-row {
+  margin-bottom: var(--space-2xl);
+}
+
+.section-heading {
+  margin-bottom: var(--space-2xl);
+}
+
+.shelf {
+  margin-bottom: var(--space-4xl);
+}
+
+/*
+ * Sidebar header holding the menu icon and the wordmark. Sits further from the
+ * nav rows than the sidebar's own gap provides.
+ */
+.sidebar-header {
+  margin-bottom: var(--space-md);
+}
+
+/*
+ * Sidebar navigation links. Owns the vertical rhythm between the nav rows; the
+ * list reset itself stays in the Sidebar module.
+ */
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  /* gap: var(--space-xs); */
+}
+
+:root {
+  color-scheme: dark;
+
+  --text-heading: #ffffff;
+  --text-body: #ffffff;
+  --text-muted: #b4b4b4;
+  --surface: #030303;
+  --surface-raised: #292929;
+  --surface-code: rgba(255, 255, 255, 0.1);
+  --border: rgba(255, 255, 255, 0.2);
+  --accent: #ffffff;
+  --accent-contrast: #030303;
+  --accent-secondary: #1c1c1c;
 
   --space-3xs: 0.25rem;
   --space-2xs: 0.5rem;
@@ -39,6 +105,8 @@ a {
   --space-lg: 2rem;
   --space-xl: 3rem;
   --space-2xl: 4rem;
+  --space-3xl: 5rem;
+  --space-4xl: 6rem;
 
   --font-sans: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   --font-mono: ui-monospace, Consolas, monospace;
@@ -62,10 +130,26 @@ a {
   --gradient-end: var(--surface);
   --gradient-start-stop: 0%;
   --gradient-end-stop: 40%;
-  --gradient-top: linear-gradient(to bottom, var(--gradient-start) var(--gradient-start-stop), var(--gradient-end) var(--gradient-end-stop));
-  --gradient-bottom: linear-gradient(to top, var(--gradient-start) var(--gradient-start-stop), var(--gradient-end) var(--gradient-end-stop));
-  --gradient-left: linear-gradient(to right, var(--gradient-start) var(--gradient-start-stop), var(--gradient-end) var(--gradient-end-stop));
-  --gradient-right: linear-gradient(to left, var(--gradient-start) var(--gradient-start-stop), var(--gradient-end) var(--gradient-end-stop));
+  --gradient-top: linear-gradient(
+    to bottom,
+    var(--gradient-start) var(--gradient-start-stop),
+    var(--gradient-end) var(--gradient-end-stop)
+  );
+  --gradient-bottom: linear-gradient(
+    to top,
+    var(--gradient-start) var(--gradient-start-stop),
+    var(--gradient-end) var(--gradient-end-stop)
+  );
+  --gradient-left: linear-gradient(
+    to right,
+    var(--gradient-start) var(--gradient-start-stop),
+    var(--gradient-end) var(--gradient-end-stop)
+  );
+  --gradient-right: linear-gradient(
+    to left,
+    var(--gradient-start) var(--gradient-start-stop),
+    var(--gradient-end) var(--gradient-end-stop)
+  );
 }
 
 /*
@@ -79,25 +163,25 @@ a {
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     --text-heading: #ffffff;
-    --text-body: #e0e0e0;
-    --text-muted: #9e9e9e;
-    --surface: #121212;
-    --surface-raised: #1e1e1e;
-    --surface-code: rgba(144, 202, 249, 0.16);
-    --border: #333333;
-    --accent: #90caf9;
-    --accent-contrast: #0a1929;
+    --text-body: #ffffff;
+    --text-muted: #b4b4b4;
+    --surface: #030303;
+    --surface-raised: #292929;
+    --surface-code: rgba(255, 255, 255, 0.1);
+    --border: rgba(255, 255, 255, 0.2);
+    --accent: #ffffff;
+    --accent-contrast: #030303;
   }
 }
 
 :root[data-theme='dark'] {
   --text-heading: #ffffff;
-  --text-body: #e0e0e0;
-  --text-muted: #9e9e9e;
-  --surface: #121212;
-  --surface-raised: #1e1e1e;
-  --surface-code: rgba(144, 202, 249, 0.16);
-  --border: #333333;
-  --accent: #90caf9;
-  --accent-contrast: #0a1929;
+  --text-body: #ffffff;
+  --text-muted: #b4b4b4;
+  --surface: #030303;
+  --surface-raised: #292929;
+  --surface-code: rgba(255, 255, 255, 0.1);
+  --border: rgba(255, 255, 255, 0.2);
+  --accent: #ffffff;
+  --accent-contrast: #030303;
 }

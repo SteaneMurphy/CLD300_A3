@@ -2,11 +2,19 @@
 
 import type { IconName, IconSize } from '../Icon/Icon.types'
 
+export type LinkGap = 'sm' | 'md' | 'lg'
+
+export type LinkSize = 'sm' | 'md' | 'lg'
+
 interface LinkBase {
   destination: string
   linkText: string
   hoverBackground?: boolean
   fillWidth?: boolean
+  /** Space between the icon and the link text. */
+  gap?: LinkGap
+  /** Overall height of the link row. */
+  size?: LinkSize
 }
 
 interface LinkWithIcon extends LinkBase {
